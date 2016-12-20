@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		43015D7C1E09427E0085D3B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43015D7B1E09427E0085D3B0 /* AppDelegate.swift */; };
-		43015D7E1E09427E0085D3B0 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43015D7D1E09427E0085D3B0 /* SettingViewController.swift */; };
 		43015D811E09427E0085D3B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43015D7F1E09427E0085D3B0 /* Main.storyboard */; };
 		43015D831E09427E0085D3B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43015D821E09427E0085D3B0 /* Assets.xcassets */; };
 		43015D861E09427E0085D3B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43015D841E09427E0085D3B0 /* LaunchScreen.storyboard */; };
@@ -17,12 +16,12 @@
 		43015D951E094AED0085D3B0 /* University.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43015D941E094AED0085D3B0 /* University.plist */; };
 		431D87F81E096C52001735D1 /* UniversityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 431D87F71E096C52001735D1 /* UniversityCell.xib */; };
 		431D87FB1E096CAE001735D1 /* UniversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D87FA1E096CAE001735D1 /* UniversityTableViewCell.swift */; };
+		431D87FE1E097622001735D1 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D87FD1E097622001735D1 /* SettingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		43015D781E09427E0085D3B0 /* UniversityRating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversityRating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43015D7B1E09427E0085D3B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		43015D7D1E09427E0085D3B0 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		43015D801E09427E0085D3B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43015D821E09427E0085D3B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43015D851E09427E0085D3B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +31,7 @@
 		43015D941E094AED0085D3B0 /* University.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = University.plist; sourceTree = "<group>"; };
 		431D87F71E096C52001735D1 /* UniversityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UniversityCell.xib; path = ../UniversityCell.xib; sourceTree = "<group>"; };
 		431D87FA1E096CAE001735D1 /* UniversityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityTableViewCell.swift; sourceTree = "<group>"; };
+		431D87FD1E097622001735D1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingTableViewController.swift; path = ../SettingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +64,12 @@
 		43015D7A1E09427E0085D3B0 /* UniversityRating */ = {
 			isa = PBXGroup;
 			children = (
+				431D87FF1E097745001735D1 /* SettingsCell */,
+				431D87FC1E097574001735D1 /* Model */,
 				431D87F91E096C8C001735D1 /* UniversityCell */,
 				43015D7B1E09427E0085D3B0 /* AppDelegate.swift */,
-				43015D7D1E09427E0085D3B0 /* SettingViewController.swift */,
 				43015D8F1E09435D0085D3B0 /* RatingTableViewController.swift */,
-				43015D921E0944A60085D3B0 /* UniversityModel.swift */,
+				431D87FD1E097622001735D1 /* SettingTableViewController.swift */,
 				43015D7F1E09427E0085D3B0 /* Main.storyboard */,
 				43015D821E09427E0085D3B0 /* Assets.xcassets */,
 				43015D841E09427E0085D3B0 /* LaunchScreen.storyboard */,
@@ -85,6 +86,21 @@
 				431D87FA1E096CAE001735D1 /* UniversityTableViewCell.swift */,
 			);
 			name = UniversityCell;
+			sourceTree = "<group>";
+		};
+		431D87FC1E097574001735D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				43015D921E0944A60085D3B0 /* UniversityModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		431D87FF1E097745001735D1 /* SettingsCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SettingsCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,11 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43015D7E1E09427E0085D3B0 /* SettingViewController.swift in Sources */,
 				43015D901E09435D0085D3B0 /* RatingTableViewController.swift in Sources */,
 				43015D7C1E09427E0085D3B0 /* AppDelegate.swift in Sources */,
 				43015D931E0944A60085D3B0 /* UniversityModel.swift in Sources */,
 				431D87FB1E096CAE001735D1 /* UniversityTableViewCell.swift in Sources */,
+				431D87FE1E097622001735D1 /* SettingTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
