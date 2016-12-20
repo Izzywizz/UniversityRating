@@ -43,26 +43,11 @@ class RatingTableViewController: UITableViewController {
         return universityArray.count
     }
 
-//    -(PromotionTableCell *) promotionCellAtIndex: (NSIndexPath *) indexPath {
-//    
-//    NSString *reuseCellID = @"PromotionCell";
-//    NSString *nibName = @"PromotionTableCell";
-//    
-//    [self.tableView registerNib:[UINib nibWithNibName:nibName bundle:nil] forCellReuseIdentifier:reuseCellID];
-//    
-//    PromotionTableCell *cell = [self.tableView dequeueReusableCellWithIdentifier:reuseCellID forIndexPath:indexPath];
-//    Promotion *p = [[Data sharedInstance].promotionsArray objectAtIndex:indexPath.row];
-//    //    Promotion *p = [[Data sharedInstance].promotionsDict valueForKey:[_promoKeysArray objectAtIndex:indexPath.row]]; //Access the object associated the ID
-//    cell.promotion = p; //reference the object associated with the Cell
-//    [cell configureCell];
-//    
-//    return cell;
-//    }
     
-    func universityCellAtIndex(indexPath: NSIndexPath) -> UniversityTableViewCell {
+    func universityCellAtIndex(indexPath: IndexPath) -> UniversityTableViewCell {
         
         self.tableView.register(UINib.init(nibName: "UniversityCell", bundle: nil), forCellReuseIdentifier: "universityCell")
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "universityCell", for: (indexPath as NSIndexPath) as IndexPath) as! UniversityTableViewCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "universityCell", for: indexPath) as! UniversityTableViewCell
         let uni = universityArray.object(at: indexPath.row) as! University
         cell.universitObject = uni
         cell.configureCell()
@@ -73,9 +58,7 @@ class RatingTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-//        cell.textLabel?.text = uni.question
-//        print("Question: \(uni.question)")
-        return self.universityCellAtIndex(indexPath: indexPath as NSIndexPath)
+        return self.universityCellAtIndex(indexPath: indexPath)
     }
     
 
