@@ -17,6 +17,8 @@
 		431D87F81E096C52001735D1 /* UniversityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 431D87F71E096C52001735D1 /* UniversityCell.xib */; };
 		431D87FB1E096CAE001735D1 /* UniversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D87FA1E096CAE001735D1 /* UniversityTableViewCell.swift */; };
 		431D87FE1E097622001735D1 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D87FD1E097622001735D1 /* SettingTableViewController.swift */; };
+		431D88011E0977A7001735D1 /* Settings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 431D88001E0977A7001735D1 /* Settings.xib */; };
+		431D88031E09787D001735D1 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D88021E09787D001735D1 /* SettingsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		431D87F71E096C52001735D1 /* UniversityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UniversityCell.xib; path = ../UniversityCell.xib; sourceTree = "<group>"; };
 		431D87FA1E096CAE001735D1 /* UniversityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityTableViewCell.swift; sourceTree = "<group>"; };
 		431D87FD1E097622001735D1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingTableViewController.swift; path = ../SettingTableViewController.swift; sourceTree = "<group>"; };
+		431D88001E0977A7001735D1 /* Settings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Settings.xib; sourceTree = "<group>"; };
+		431D88021E09787D001735D1 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +68,8 @@
 		43015D7A1E09427E0085D3B0 /* UniversityRating */ = {
 			isa = PBXGroup;
 			children = (
-				431D87FF1E097745001735D1 /* SettingsCell */,
 				431D87FC1E097574001735D1 /* Model */,
+				431D87FF1E097745001735D1 /* SettingsCell */,
 				431D87F91E096C8C001735D1 /* UniversityCell */,
 				43015D7B1E09427E0085D3B0 /* AppDelegate.swift */,
 				43015D8F1E09435D0085D3B0 /* RatingTableViewController.swift */,
@@ -99,6 +103,8 @@
 		431D87FF1E097745001735D1 /* SettingsCell */ = {
 			isa = PBXGroup;
 			children = (
+				431D88001E0977A7001735D1 /* Settings.xib */,
+				431D88021E09787D001735D1 /* SettingsTableViewCell.swift */,
 			);
 			name = SettingsCell;
 			sourceTree = "<group>";
@@ -163,6 +169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431D88011E0977A7001735D1 /* Settings.xib in Resources */,
 				43015D951E094AED0085D3B0 /* University.plist in Resources */,
 				43015D861E09427E0085D3B0 /* LaunchScreen.storyboard in Resources */,
 				431D87F81E096C52001735D1 /* UniversityCell.xib in Resources */,
@@ -180,6 +187,7 @@
 			files = (
 				43015D901E09435D0085D3B0 /* RatingTableViewController.swift in Sources */,
 				43015D7C1E09427E0085D3B0 /* AppDelegate.swift in Sources */,
+				431D88031E09787D001735D1 /* SettingsTableViewCell.swift in Sources */,
 				43015D931E0944A60085D3B0 /* UniversityModel.swift in Sources */,
 				431D87FB1E096CAE001735D1 /* UniversityTableViewCell.swift in Sources */,
 				431D87FE1E097622001735D1 /* SettingTableViewController.swift in Sources */,
