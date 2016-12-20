@@ -17,7 +17,6 @@ class RatingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Table View loaded")
-        UniversityModel.sharedIntstance.createUniversityArray()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
