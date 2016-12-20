@@ -16,11 +16,11 @@ final class UniversityModel {
     
     // Can't init is singleton
     private init() { }
-    
-    //MARK: Local Variable/ methods    
-    func createUniversityArray() {
-        var universityArray = NSMutableArray()
-        
+
+    //MARK: Local Variable/ methods
+    var universityArray = NSMutableArray()
+
+    func createUniversityArray() {        
         for dict in University().plistParser(plistName: "University") {
             let uni: University = University().createUniversityFromDict(dict: dict as! NSDictionary)
             universityArray.add(uni)

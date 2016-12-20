@@ -10,11 +10,15 @@ import UIKit
 
 class RatingTableViewController: UITableViewController {
 
+    let universityArray = UniversityModel.sharedIntstance.universityArray
+//  varet universityTableCell = UniversityTableViewCell()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Table View loaded")
         UniversityModel.sharedIntstance.createUniversityArray()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -31,23 +35,49 @@ class RatingTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return universityArray.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+//    -(PromotionTableCell *) promotionCellAtIndex: (NSIndexPath *) indexPath {
+//    
+//    NSString *reuseCellID = @"PromotionCell";
+//    NSString *nibName = @"PromotionTableCell";
+//    
+//    [self.tableView registerNib:[UINib nibWithNibName:nibName bundle:nil] forCellReuseIdentifier:reuseCellID];
+//    
+//    PromotionTableCell *cell = [self.tableView dequeueReusableCellWithIdentifier:reuseCellID forIndexPath:indexPath];
+//    Promotion *p = [[Data sharedInstance].promotionsArray objectAtIndex:indexPath.row];
+//    //    Promotion *p = [[Data sharedInstance].promotionsDict valueForKey:[_promoKeysArray objectAtIndex:indexPath.row]]; //Access the object associated the ID
+//    cell.promotion = p; //reference the object associated with the Cell
+//    [cell configureCell];
+//    
+//    return cell;
+//    }
+    
+    func universityCellAtIndex(indexPath: NSIndexPath) -> UniversityTableViewCell {
+        
+        self.tableView.register(UINib.init(nibName: "UniversityCell", bundle: nil), forCellReuseIdentifier: "universityCell")
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "universityCell", for: (indexPath as NSIndexPath) as IndexPath) as! UniversityTableViewCell
+        let uni = universityArray.object(at: indexPath.row) as! University
+        cell.universitObject = uni
+        cell.configureCell()
+        
         return cell
+
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+//        cell.textLabel?.text = uni.question
+//        print("Question: \(uni.question)")
+        return self.universityCellAtIndex(indexPath: indexPath as NSIndexPath)
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
