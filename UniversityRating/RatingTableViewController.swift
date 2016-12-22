@@ -71,7 +71,7 @@ class RatingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let uni = universityArray.object(at: indexPath.row) as! University
         if uni.checked == true {
-            return 100.0
+            return 150.0
         } else {
             return 0.0
         }
