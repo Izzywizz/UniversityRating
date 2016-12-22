@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum Rating: Int {
+    case poor = 0, notGreat, satisfactory, good, amazing
+}
+
 class UniversityTableViewCell: UITableViewCell {
     
     //MARK: Stored Properties
@@ -20,6 +24,7 @@ class UniversityTableViewCell: UITableViewCell {
     @IBOutlet weak var goodButton: UIButton!
     @IBOutlet weak var amazingButton: UIButton!
     var buttonArray: [UIButton] = [UIButton]() // Empty UIButton array
+    
     
     //MARK: nib Methods
     override func awakeFromNib() {
@@ -45,29 +50,29 @@ class UniversityTableViewCell: UITableViewCell {
     //MARK: Action Methods
     @IBAction func emojiSelected(_ sender: UIButton) {
         
-        switch sender.tag {
-        case 0:
+        let ratingScore = Rating(rawValue: sender.tag)!
+        
+        switch ratingScore {
+        case .poor:
             print("POOR")
             offSelectedButtonState()
             sender.isSelected = !sender.isSelected;
-        case 1:
+        case .notGreat:
             print("NotGreat")
             offSelectedButtonState()
             sender.isSelected = !sender.isSelected;
-        case 2:
+        case .satisfactory:
             print("Satisfactory")
             offSelectedButtonState()
             sender.isSelected = !sender.isSelected;
-        case 3:
+        case .good:
             print("Good")
             offSelectedButtonState()
             sender.isSelected = !sender.isSelected;
-        case 4:
+        case .amazing:
             print("Amazing")
             offSelectedButtonState()
             sender.isSelected = !sender.isSelected;
-        default:
-            print("TAG not reconized")
         }
         
 //        print(sender.tag)
