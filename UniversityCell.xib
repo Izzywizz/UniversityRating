@@ -22,16 +22,18 @@
                         <rect key="frame" x="0.0" y="64" width="94" height="79"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlZ-zH-6VO">
-                        <rect key="frame" x="234" y="8" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="zlZ-zH-6VO">
+                        <rect key="frame" x="20" y="10" width="470" height="20"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="zlZ-zH-6VO" firstAttribute="centerX" secondItem="MgJ-8G-wul" secondAttribute="centerX" id="77e-HC-s9Z"/>
-                    <constraint firstItem="zlZ-zH-6VO" firstAttribute="centerY" secondItem="MgJ-8G-wul" secondAttribute="centerY" id="lMc-Td-RBQ"/>
+                    <constraint firstItem="zlZ-zH-6VO" firstAttribute="top" secondItem="MgJ-8G-wul" secondAttribute="top" constant="10" id="aas-lX-5oh"/>
+                    <constraint firstItem="zlZ-zH-6VO" firstAttribute="leading" secondItem="MgJ-8G-wul" secondAttribute="leading" constant="20" id="hPE-xj-6vA"/>
+                    <constraint firstAttribute="trailing" secondItem="zlZ-zH-6VO" secondAttribute="trailing" constant="20" id="xm1-kv-78A"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

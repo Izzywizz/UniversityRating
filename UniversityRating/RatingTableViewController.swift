@@ -10,8 +10,8 @@ import UIKit
 
 class RatingTableViewController: UITableViewController {
 
+    //MARK: Stored Properties
     let universityArray = UniversityModel.sharedIntstance.universityArray
-//  varet universityTableCell = UniversityTableViewCell()
     
     //MARK: UI Methods
     override func viewDidLoad() {
@@ -30,6 +30,7 @@ class RatingTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -45,6 +46,7 @@ class RatingTableViewController: UITableViewController {
         return self.universityCellAtIndex(indexPath: indexPath)
     }
     
+    
     //MARK: Custom Cells
     func universityCellAtIndex(indexPath: IndexPath) -> UniversityTableViewCell {
         
@@ -52,14 +54,7 @@ class RatingTableViewController: UITableViewController {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "universityCell", for: indexPath) as! UniversityTableViewCell
         let uni = universityArray.object(at: indexPath.row) as! University
         cell.universitObject = uni
-        
-//        if uni.checked == true {
-//            print("Don't Hide Cell")
-//            cell.isHidden = false
-//        } else {
-//            print("Hide Cell")
-//            cell.isHidden = true
-//        }
+
         
         cell.configureCell()
     
@@ -70,7 +65,7 @@ class RatingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let uni = universityArray.object(at: indexPath.row) as! University
         if uni.checked == true {
-            return 44.0
+            return 100.0
         } else {
             return 0.0
         }

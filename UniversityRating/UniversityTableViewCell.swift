@@ -26,7 +26,7 @@ class UniversityTableViewCell: UITableViewCell {
     }
     
     func configureCell() {
-        moduleLabel.text = universitObject.module
+        moduleLabel.text = "What do you think of Module \(universitObject.module)"
     }
 
 }
