@@ -42,10 +42,10 @@ class SettingTableViewController: UITableViewController {
     //MARK: Observer Methods
     func moveToRatingTableView() {
         print("Moving to Rating Table view")
-        for index in universityArray {
-            let university = index as! University
-            print(university.checked)
-        }
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let ratingVC = storyboard.instantiateViewController(withIdentifier: "RatingTableViewController") as! RatingTableViewController
+        self.navigationController?.show(ratingVC, sender: nil)
+//        self.present(ratingVC, animated:true, completion:nil)
         
     }
     

@@ -18,11 +18,11 @@ class RatingTableViewController: UITableViewController {
         super.viewDidLoad()
         print("Table View loaded")
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        for index in universityArray {
+            let university = index as! University
+            print(university.checked)
+        }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +42,11 @@ class RatingTableViewController: UITableViewController {
         return universityArray.count
     }
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return self.universityCellAtIndex(indexPath: indexPath)
+    }
     
+    //MARK: Custom Cells
     func universityCellAtIndex(indexPath: IndexPath) -> UniversityTableViewCell {
         
         self.tableView.register(UINib.init(nibName: "UniversityCell", bundle: nil), forCellReuseIdentifier: "universityCell")
@@ -55,8 +59,10 @@ class RatingTableViewController: UITableViewController {
 
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return self.universityCellAtIndex(indexPath: indexPath)
+    //MARK: Action Methods
+    
+    @IBAction func settingsButtonPressed(_ sender: UIBarButtonItem) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
 }
