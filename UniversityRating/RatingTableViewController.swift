@@ -50,7 +50,7 @@ class RatingTableViewController: UITableViewController {
     //MARK: Custom Cells
     func universityCellAtIndex(indexPath: IndexPath) -> UniversityTableViewCell {
         
-        self.tableView.register(UINib.init(nibName: "UniversityCell", bundle: nil), forCellReuseIdentifier: "universityCell")
+        self.tableView.register(UINib.init(nibName: "University", bundle: nil), forCellReuseIdentifier: "universityCell")
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "universityCell", for: indexPath) as! UniversityTableViewCell
         let uni = universityArray.object(at: indexPath.row) as! University
         cell.universitObject = uni

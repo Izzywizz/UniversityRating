@@ -14,7 +14,7 @@
 		43015D901E09435D0085D3B0 /* RatingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43015D8F1E09435D0085D3B0 /* RatingTableViewController.swift */; };
 		43015D931E0944A60085D3B0 /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43015D921E0944A60085D3B0 /* UniversityModel.swift */; };
 		43015D951E094AED0085D3B0 /* University.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43015D941E094AED0085D3B0 /* University.plist */; };
-		431D87F81E096C52001735D1 /* UniversityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 431D87F71E096C52001735D1 /* UniversityCell.xib */; };
+		431D87F81E096C52001735D1 /* University.xib in Resources */ = {isa = PBXBuildFile; fileRef = 431D87F71E096C52001735D1 /* University.xib */; };
 		431D87FB1E096CAE001735D1 /* UniversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D87FA1E096CAE001735D1 /* UniversityTableViewCell.swift */; };
 		431D87FE1E097622001735D1 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D87FD1E097622001735D1 /* SettingTableViewController.swift */; };
 		431D88011E0977A7001735D1 /* Settings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 431D88001E0977A7001735D1 /* Settings.xib */; };
@@ -46,7 +46,7 @@
 		43015D8F1E09435D0085D3B0 /* RatingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingTableViewController.swift; sourceTree = "<group>"; };
 		43015D921E0944A60085D3B0 /* UniversityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
 		43015D941E094AED0085D3B0 /* University.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = University.plist; sourceTree = "<group>"; };
-		431D87F71E096C52001735D1 /* UniversityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UniversityCell.xib; path = ../UniversityCell.xib; sourceTree = "<group>"; };
+		431D87F71E096C52001735D1 /* University.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = University.xib; path = ../University.xib; sourceTree = "<group>"; };
 		431D87FA1E096CAE001735D1 /* UniversityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityTableViewCell.swift; sourceTree = "<group>"; };
 		431D87FD1E097622001735D1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingTableViewController.swift; path = ../SettingTableViewController.swift; sourceTree = "<group>"; };
 		431D88001E0977A7001735D1 /* Settings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Settings.xib; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		431D87F91E096C8C001735D1 /* UniversityCell */ = {
 			isa = PBXGroup;
 			children = (
-				431D87F71E096C52001735D1 /* UniversityCell.xib */,
+				431D87F71E096C52001735D1 /* University.xib */,
 				431D87FA1E096CAE001735D1 /* UniversityTableViewCell.swift */,
 			);
 			name = UniversityCell;
@@ -230,7 +230,7 @@
 				43015D861E09427E0085D3B0 /* LaunchScreen.storyboard in Resources */,
 				431D881A1E0985D8001735D1 /* OpenSans-Italic.ttf in Resources */,
 				431D881D1E0985D8001735D1 /* OpenSans-Regular.ttf in Resources */,
-				431D87F81E096C52001735D1 /* UniversityCell.xib in Resources */,
+				431D87F81E096C52001735D1 /* University.xib in Resources */,
 				431D88171E0985D8001735D1 /* OpenSans-BoldItalic.ttf in Resources */,
 				431D88151E0985D8001735D1 /* LICENSE.txt in Resources */,
 				431D881F1E0985D8001735D1 /* OpenSans-SemiboldItalic.ttf in Resources */,
