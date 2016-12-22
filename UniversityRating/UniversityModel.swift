@@ -24,7 +24,7 @@ final class UniversityModel {
         for dict in University().plistParser(plistName: "University") {
             let uni: University = University().createUniversityFromDict(dict: dict as! NSDictionary)
             universityArray.add(uni)
-//            print("Module: \(uni.module), question: \(uni.question) rating: \(uni.rating)")
+//            print("Module: \(uni.module), question: \(uni.question) rating: \(uni.rating) checked: \(uni.checked)")
 //            print("Array Count: \(universityArray.count)")
         }
     }
@@ -36,12 +36,15 @@ class University    {
     var module = ""
     var question = ""
     var rating = ""
+    var checked = false
+    
     
     func createUniversityFromDict( dict: NSDictionary) -> University {
         
         self.module = dict.value(forKey: "module") as! String
         self.question = dict.value(forKey: "question") as! String
         self.rating = dict.value(forKey: "rating") as! String
+        self.checked = dict.value(forKey: "checked") as! Bool
         
         return self
     }

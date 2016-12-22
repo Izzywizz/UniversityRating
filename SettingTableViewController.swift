@@ -10,6 +10,8 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
     let universityArray = UniversityModel.sharedIntstance.universityArray
+    var selectedRow: IndexPath?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +40,31 @@ class SettingTableViewController: UITableViewController {
         return universityArray.count
     }
     
+    //MARK: Selection
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+        let cell = tableView.dequeueReusableCell(withIdentifier: "settingsHeaderCell", for: indexPath)
+        let uni = universityArray.object(at: indexPath.row) as! University
+        
+        if uni.checked == false {
+            cell.accessoryType = .checkmark
+            uni.checked = true
+        } else {
+            cell.accessoryType = .none
+            uni.checked = false
+        }
+        tableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
+    
+    //MARK: Creating Cells
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         return self.settingsCellAtIndex(indexPath: indexPath)
     }
     
-
     
+    //MARK: HeaderView
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 70))
@@ -59,6 +80,7 @@ class SettingTableViewController: UITableViewController {
         return 70
     }
     
+    
     //MARK: Custom Cells
     func settingsCellAtIndex(indexPath: IndexPath) -> SettingsTableViewCell {
         
@@ -67,6 +89,14 @@ class SettingTableViewController: UITableViewController {
         let uni = universityArray.object(at: indexPath.row) as! University
         cell.universitObject = uni
         cell.configureCell()
+        
+        if uni.checked == true {
+            cell.accessoryType = .checkmark
+            uni.checked = true
+        } else  {
+            cell.accessoryType = .none
+            uni.checked = false
+        }
         
         return cell
         

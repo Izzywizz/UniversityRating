@@ -6,9 +6,11 @@
 		<key>module</key>
 		<string>200</string>
 		<key>question</key>
-		<string>What do you think of module 201</string>
+		<string>What do you think of module 200</string>
 		<key>rating</key>
 		<string>none</string>
+		<key>checked</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>module</key>
@@ -17,6 +19,8 @@
 		<string>What do you think of module 201</string>
 		<key>rating</key>
 		<string>none</string>
+		<key>checked</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>module</key>
@@ -25,6 +29,8 @@
 		<string>What do you think of module 202</string>
 		<key>rating</key>
 		<string>none</string>
+		<key>checked</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>module</key>
@@ -33,6 +39,8 @@
 		<string>What do you think of module 203</string>
 		<key>rating</key>
 		<string>none</string>
+		<key>checked</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>module</key>
@@ -41,6 +49,8 @@
 		<string>What do you think of module 204</string>
 		<key>rating</key>
 		<string>none</string>
+		<key>checked</key>
+		<false/>
 	</dict>
 </array>
 </plist>
