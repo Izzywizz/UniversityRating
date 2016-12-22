@@ -12,7 +12,7 @@
         <!--Rating Table View Controller-->
         <scene sceneID="bXR-iF-HUA">
             <objects>
-                <tableViewController id="zkj-Yz-LIQ" customClass="RatingTableViewController" customModule="UniversityRating" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="RatingTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zkj-Yz-LIQ" customClass="RatingTableViewController" customModule="UniversityRating" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gyq-cw-nTW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +72,6 @@
         <!--Navigation Controller-->
         <scene sceneID="yW5-Hn-GDC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2As-pL-eK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jT9-HS-aZ2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kjd-82-f7c">
@@ -84,6 +83,7 @@
                         <segue destination="d13-yv-Jw7" kind="relationship" relationship="rootViewController" id="1T5-yJ-DUS"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2As-pL-eK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1944.5" y="850.5"/>
         </scene>

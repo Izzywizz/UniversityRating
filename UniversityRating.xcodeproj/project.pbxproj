@@ -32,6 +32,8 @@
 		431D881E1E0985D8001735D1 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 431D88131E0985D8001735D1 /* OpenSans-Semibold.ttf */; };
 		431D881F1E0985D8001735D1 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 431D88141E0985D8001735D1 /* OpenSans-SemiboldItalic.ttf */; };
 		431D88221E0986E7001735D1 /* SettingsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D88211E0986E7001735D1 /* SettingsHeaderTableViewCell.swift */; };
+		4325A6E61E0BD20C00A2DE39 /* SettingsFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4325A6E51E0BD20C00A2DE39 /* SettingsFooter.xib */; };
+		4325A6E81E0BD6A100A2DE39 /* SettingsFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4325A6E71E0BD6A100A2DE39 /* SettingsFooterTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		431D88131E0985D8001735D1 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		431D88141E0985D8001735D1 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		431D88211E0986E7001735D1 /* SettingsHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		4325A6E51E0BD20C00A2DE39 /* SettingsFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsFooter.xib; sourceTree = "<group>"; };
+		4325A6E71E0BD6A100A2DE39 /* SettingsFooterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsFooterTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,8 @@
 				431D88021E09787D001735D1 /* SettingsTableViewCell.swift */,
 				431D88061E098505001735D1 /* SettingsHeader.xib */,
 				431D88211E0986E7001735D1 /* SettingsHeaderTableViewCell.swift */,
+				4325A6E51E0BD20C00A2DE39 /* SettingsFooter.xib */,
+				4325A6E71E0BD6A100A2DE39 /* SettingsFooterTableViewCell.swift */,
 			);
 			name = SettingsCell;
 			sourceTree = "<group>";
@@ -217,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				431D88011E0977A7001735D1 /* Settings.xib in Resources */,
+				4325A6E61E0BD20C00A2DE39 /* SettingsFooter.xib in Resources */,
 				431D88181E0985D8001735D1 /* OpenSans-ExtraBold.ttf in Resources */,
 				431D881B1E0985D8001735D1 /* OpenSans-Light.ttf in Resources */,
 				43015D951E094AED0085D3B0 /* University.plist in Resources */,
@@ -249,6 +256,7 @@
 				431D88031E09787D001735D1 /* SettingsTableViewCell.swift in Sources */,
 				43015D931E0944A60085D3B0 /* UniversityModel.swift in Sources */,
 				431D88221E0986E7001735D1 /* SettingsHeaderTableViewCell.swift in Sources */,
+				4325A6E81E0BD6A100A2DE39 /* SettingsFooterTableViewCell.swift in Sources */,
 				431D87FB1E096CAE001735D1 /* UniversityTableViewCell.swift in Sources */,
 				431D87FE1E097622001735D1 /* SettingTableViewController.swift in Sources */,
 			);

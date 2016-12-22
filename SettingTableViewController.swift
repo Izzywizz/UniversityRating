@@ -16,11 +16,11 @@ class SettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UniversityModel.sharedIntstance.createUniversityArray()
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 140
-        
-        tableView.register(UINib(nibName: "SettingsHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "settingsHeaderCell")
-        
+        tableSetup()
+        // Define identifier
+        let notificationName = Notification.Name("moduleSelected")
+        // Register to receive notification
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingTableViewController.moveToRatingTableView), name: notificationName, object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,8 +28,28 @@ class SettingTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
+    override func viewDidDisappear(_ animated: Bool) {
+        //remove observer!
+    }
     
+    //MARK: TableSetup
+    func tableSetup() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
+        tableView.register(UINib(nibName: "SettingsHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "settingsHeaderCell")
+    }
+    
+    //MARK: Observer Methods
+    func moveToRatingTableView() {
+        print("Moving to Rating Table view")
+        for index in universityArray {
+            let university = index as! University
+            print(university.checked)
+        }
+        
+    }
+    
+    // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -40,7 +60,7 @@ class SettingTableViewController: UITableViewController {
         return universityArray.count
     }
     
-    //MARK: Selection
+    //MARK: Selection/ Checkmark method
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "settingsHeaderCell", for: indexPath)
@@ -53,6 +73,8 @@ class SettingTableViewController: UITableViewController {
             cell.accessoryType = .none
             uni.checked = false
         }
+        
+        
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
@@ -62,7 +84,6 @@ class SettingTableViewController: UITableViewController {
         
         return self.settingsCellAtIndex(indexPath: indexPath)
     }
-    
     
     //MARK: HeaderView
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
@@ -80,6 +101,20 @@ class SettingTableViewController: UITableViewController {
         return 70
     }
     
+    //MARK: FooterView
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 70))
+        if (section == 0) {
+            return self.settingsFooterCell(section: section)
+        } else {
+            footerView.backgroundColor = UIColor.clear
+        }
+        return footerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 70
+    }
     
     //MARK: Custom Cells
     func settingsCellAtIndex(indexPath: IndexPath) -> SettingsTableViewCell {
@@ -105,10 +140,17 @@ class SettingTableViewController: UITableViewController {
     func settingsHeaderCell(section: NSInteger) -> SettingsHeaderTableViewCell {
         self.tableView.register(UINib.init(nibName: "SettingsHeader", bundle: nil), forCellReuseIdentifier: "settingsHeaderCell")
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "settingsHeaderCell") as! SettingsHeaderTableViewCell
+        
         return cell
     }
     
-    
-    
+    func settingsFooterCell(section: NSInteger) -> SettingsFooterTableViewCell {
+        self.tableView.register(UINib.init(nibName: "SettingsFooter", bundle: nil), forCellReuseIdentifier: "settingsFooterCell")
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "settingsFooterCell") as! SettingsFooterTableViewCell
+        
+        return  cell
+        
+    }
+
     
 }
