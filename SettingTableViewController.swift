@@ -9,18 +9,20 @@
 import UIKit
 
 class SettingTableViewController: UITableViewController {
+    
+    //MARK: Stored Properties
     let universityArray = UniversityModel.sharedIntstance.universityArray
     var selectedRow: IndexPath?
     
-    
+    //MARK: UIView Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         UniversityModel.sharedIntstance.createUniversityArray()
         tableSetup()
-        // Define identifier
-        let notificationName = Notification.Name("moduleSelected")
-        // Register to receive notification
-        NotificationCenter.default.addObserver(self, selector: #selector(SettingTableViewController.moveToRatingTableView), name: notificationName, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        addListeningObserver()
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,7 +32,9 @@ class SettingTableViewController: UITableViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         //remove observer!
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "moduleSelected"), object: nil)
     }
+    
     
     //MARK: TableSetup
     func tableSetup() {
@@ -39,6 +43,7 @@ class SettingTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "SettingsHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "settingsHeaderCell")
     }
     
+
     //MARK: Observer Methods
     func moveToRatingTableView() {
         print("Moving to Rating Table view")
@@ -46,9 +51,17 @@ class SettingTableViewController: UITableViewController {
         let ratingVC = storyboard.instantiateViewController(withIdentifier: "RatingTableViewController") as! RatingTableViewController
         self.navigationController?.show(ratingVC, sender: nil)
 //        self.present(ratingVC, animated:true, completion:nil)
-        
     }
     
+    func addListeningObserver() {
+        // Define identifier
+        let notificationName = Notification.Name("moduleSelected")
+        // Register to receive notification
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingTableViewController.moveToRatingTableView), name: notificationName, object: nil)
+    }
+    
+    
+
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
