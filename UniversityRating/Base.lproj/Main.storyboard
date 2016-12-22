@@ -38,6 +38,19 @@
                                 <action selector="settingsButtonPressed:" destination="zkj-Yz-LIQ" id="Uuy-eK-yae"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="KJp-L5-fic">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Nlc-oV-50X">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="test:" destination="zkj-Yz-LIQ" eventType="touchUpInside" id="n4X-ei-lYf"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="button:" destination="zkj-Yz-LIQ" id="EWf-qc-FfJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
@@ -79,7 +92,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jT9-HS-aZ2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kjd-82-f7c">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kjd-82-f7c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

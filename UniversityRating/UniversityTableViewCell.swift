@@ -70,7 +70,7 @@ class UniversityTableViewCell: UITableViewCell {
             print("TAG not reconized")
         }
         
-        print(sender.tag)
+//        print(sender.tag)
         universitObject.rating = String(sender.tag)
     }
     

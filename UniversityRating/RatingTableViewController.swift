@@ -71,8 +71,15 @@ class RatingTableViewController: UITableViewController {
     
     //MARK: Action Methods
     
+    @IBAction func test(_ sender: Any) {
+        print("rating accessed")
+        for index in universityArray {
+            let university = index as! University
+            print("Rating: \(university.rating)")
+        }
+    }
+    
     @IBAction func settingsButtonPressed(_ sender: UIBarButtonItem) {
         _ = self.navigationController?.popViewController(animated: true)
     }
-    
 }
