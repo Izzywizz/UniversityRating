@@ -54,8 +54,6 @@ class RatingTableViewController: UITableViewController {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "universityCell", for: indexPath) as! UniversityTableViewCell
         let uni = universityArray.object(at: indexPath.row) as! University
         cell.universitObject = uni
-
-        
         cell.configureCell()
     
         return cell

@@ -27,7 +27,7 @@ class UniversityTableViewCell: UITableViewCell {
         // Initialization code
         setupEmoji()
         buttonArray = [poorButton, notGreatButton, satisfactoryButton, goodButton, amazingButton] // Buttons have now loaded in the view
-
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -54,14 +54,24 @@ class UniversityTableViewCell: UITableViewCell {
             print("NotGreat")
             offSelectedButtonState()
             sender.isSelected = !sender.isSelected;
-        case 2: print("Satisfactory")
-        case 3: print("Good")
-        case 4: print("Amazing")
+        case 2:
+            print("Satisfactory")
+            offSelectedButtonState()
+            sender.isSelected = !sender.isSelected;
+        case 3:
+            print("Good")
+            offSelectedButtonState()
+            sender.isSelected = !sender.isSelected;
+        case 4:
+            print("Amazing")
+            offSelectedButtonState()
+            sender.isSelected = !sender.isSelected;
         default:
             print("TAG not reconized")
         }
         
         print(sender.tag)
+        universitObject.rating = String(sender.tag)
     }
     
     //MARK: Emoji Image Setup
@@ -69,12 +79,19 @@ class UniversityTableViewCell: UITableViewCell {
         //set normal image
         poorButton.setImage(UIImage.init(named: "POOR"), for: .normal)
         notGreatButton.setImage(UIImage.init(named: "NOT GREAT"), for: .normal)
+        satisfactoryButton.setImage(UIImage.init(named: "SATIS"), for: .normal)
+        goodButton.setImage(UIImage.init(named: "GOOD"), for: .normal)
+        amazingButton.setImage(UIImage.init(named: "AMAZING"), for: .normal)
         
         //set highlighted image
         poorButton.setImage(UIImage.init(named: "POOR-A"), for: .selected)
         notGreatButton.setImage(UIImage.init(named: "NOT GREAT-A"), for: .selected)
+        satisfactoryButton.setImage(UIImage.init(named: "SATIS-A"), for: .selected)
+        goodButton.setImage(UIImage.init(named: "GOOD-A"), for: .selected)
+        amazingButton.setImage(UIImage.init(named: "AMAZING-A"), for: .selected)
+        
     }
-
+    
     func offSelectedButtonState() {
         for button in buttonArray {
             if button.isSelected == true {
