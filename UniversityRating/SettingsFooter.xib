@@ -36,6 +36,7 @@
                         </connections>
                     </button>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="CI4-6q-u7S" firstAttribute="centerY" secondItem="vSV-sZ-Gdk" secondAttribute="centerY" id="NGD-18-oH5"/>
                     <constraint firstItem="CI4-6q-u7S" firstAttribute="centerX" secondItem="vSV-sZ-Gdk" secondAttribute="centerX" id="RcB-i6-1pS"/>

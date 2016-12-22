@@ -13,11 +13,12 @@ class SettingsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var moduleSelectionLabel: UILabel!
     @IBOutlet weak var internalSettingsCard: UIView!
+    @IBOutlet weak var tickImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        print("Awake my settings")
+        internalSettingsCard.layer.cornerRadius = 5
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,7 +27,7 @@ class SettingsTableViewCell: UITableViewCell {
     }
     
     func configureCell() {
-        moduleSelectionLabel.text = universitObject.module
+        moduleSelectionLabel.text = "Module \(universitObject.module)"
     }
 
 }

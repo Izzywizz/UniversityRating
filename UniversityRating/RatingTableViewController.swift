@@ -51,7 +51,7 @@ class RatingTableViewController: UITableViewController {
     }
     
     
-    //MARK: Footer View
+    //MARK: Footer View/ Height
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 70))
         if (section == 0) {

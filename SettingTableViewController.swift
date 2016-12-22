@@ -76,21 +76,21 @@ class SettingTableViewController: UITableViewController {
     //MARK: Selection/ Checkmark method
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-        let cell = tableView.dequeueReusableCell(withIdentifier: "settingsHeaderCell", for: indexPath)
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "settingsCell", for: indexPath) as! SettingsTableViewCell
         let uni = universityArray.object(at: indexPath.row) as! University
         
         if uni.checked == false {
-            cell.accessoryType = .checkmark
+//            cell.accessoryType = .checkmark
+            cell.tickImageView.isHidden = false
             uni.checked = true
         } else {
-            cell.accessoryType = .none
+//            cell.accessoryType = .none
+            cell.tickImageView.isHidden = true
             uni.checked = false
         }
         
-        
         tableView.reloadRows(at: [indexPath], with: .none)
     }
-    
     
     //MARK: Creating Cells
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -139,10 +139,14 @@ class SettingTableViewController: UITableViewController {
         cell.configureCell()
         
         if uni.checked == true {
-            cell.accessoryType = .checkmark
+//            cell.accessoryType = .checkmark
+            cell.tickImageView.isHidden = false
+
             uni.checked = true
         } else  {
-            cell.accessoryType = .none
+//            cell.accessoryType = .none
+            cell.tickImageView.isHidden = true
+
             uni.checked = false
         }
         

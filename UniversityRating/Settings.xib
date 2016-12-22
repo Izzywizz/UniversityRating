@@ -9,49 +9,63 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" rowHeight="97" id="52m-Xw-eWg" customClass="SettingsTableViewCell" customModule="UniversityRating" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="538" height="97"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" rowHeight="98" id="52m-Xw-eWg" customClass="SettingsTableViewCell" customModule="UniversityRating" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="538" height="98"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="52m-Xw-eWg" id="JEf-gv-X3j">
-                <rect key="frame" x="0.0" y="0.0" width="538" height="96.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="52m-Xw-eWg" id="JEf-gv-X3j">
+                <rect key="frame" x="0.0" y="0.0" width="538" height="97"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RC8-D3-r1p">
-                        <rect key="frame" x="18" y="16.5" width="502" height="80"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RC8-D3-r1p">
+                        <rect key="frame" x="18" y="17" width="502" height="80"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="80" id="Zhm-na-i2u"/>
-                        </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Module 201" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vW-DI-3C3">
-                        <rect key="frame" x="38" y="48" width="463" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module 201" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vW-DI-3C3">
+                        <rect key="frame" x="38" y="48" width="463" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="463" id="gXh-Le-aRe"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="vej-DC-m7d">
+                        <rect key="frame" x="442" y="30" width="67" height="54"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="67" id="Csz-ah-wYd"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="8vW-DI-3C3" firstAttribute="leading" secondItem="JEf-gv-X3j" secondAttribute="leadingMargin" constant="30" id="6oS-St-5UE"/>
-                    <constraint firstItem="RC8-D3-r1p" firstAttribute="centerY" secondItem="JEf-gv-X3j" secondAttribute="centerY" id="FPb-AC-Xxh"/>
+                    <constraint firstItem="RC8-D3-r1p" firstAttribute="leading" secondItem="JEf-gv-X3j" secondAttribute="leadingMargin" constant="10" id="ABN-uf-ip9"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="vej-DC-m7d" secondAttribute="trailing" constant="21" id="BIf-zR-6hL"/>
+                    <constraint firstItem="RC8-D3-r1p" firstAttribute="centerX" secondItem="8vW-DI-3C3" secondAttribute="centerX" id="HIG-fv-of2"/>
                     <constraint firstItem="8vW-DI-3C3" firstAttribute="top" secondItem="JEf-gv-X3j" secondAttribute="top" constant="48" id="Mpd-e0-xfZ"/>
-                    <constraint firstItem="RC8-D3-r1p" firstAttribute="leading" secondItem="JEf-gv-X3j" secondAttribute="leadingMargin" constant="10" id="bka-57-o3w"/>
-                    <constraint firstItem="RC8-D3-r1p" firstAttribute="top" secondItem="JEf-gv-X3j" secondAttribute="topMargin" constant="8.5" id="cE9-zs-x7z"/>
-                    <constraint firstItem="RC8-D3-r1p" firstAttribute="centerX" secondItem="JEf-gv-X3j" secondAttribute="centerX" id="hQH-9U-pe9"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="RC8-D3-r1p" secondAttribute="trailing" constant="10" id="xzH-BA-LKw"/>
+                    <constraint firstAttribute="bottom" secondItem="RC8-D3-r1p" secondAttribute="bottom" id="cDR-Cz-pYj"/>
+                    <constraint firstItem="RC8-D3-r1p" firstAttribute="top" secondItem="JEf-gv-X3j" secondAttribute="topMargin" constant="9" id="dJt-wA-Frc"/>
+                    <constraint firstItem="vej-DC-m7d" firstAttribute="top" secondItem="JEf-gv-X3j" secondAttribute="topMargin" constant="22" id="gZW-Ob-T7b"/>
+                    <constraint firstItem="RC8-D3-r1p" firstAttribute="centerY" secondItem="vej-DC-m7d" secondAttribute="centerY" id="t5v-aJ-org"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.90588235294117647" green="0.91764705882352937" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="internalSettingsCard" destination="RC8-D3-r1p" id="amb-iX-kxz"/>
                 <outlet property="moduleSelectionLabel" destination="8vW-DI-3C3" id="J5h-Pw-qtY"/>
+                <outlet property="tickImageView" destination="vej-DC-m7d" id="Xyt-Eo-NV9"/>
             </connections>
-            <point key="canvasLocation" x="-80" y="77.5"/>
+            <point key="canvasLocation" x="-80" y="78"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="tick" width="31" height="32"/>
+    </resources>
 </document>
