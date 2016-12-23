@@ -82,10 +82,14 @@ class SettingTableViewController: UITableViewController {
         if uni.checked == false {
 //            cell.accessoryType = .checkmark
             cell.tickImageView.isHidden = false
+            cell.internalSettingsCard.alpha = 1.0
+
             uni.checked = true
         } else {
 //            cell.accessoryType = .none
             cell.tickImageView.isHidden = true
+            cell.internalSettingsCard.alpha = 0.5
+
             uni.checked = false
         }
         
@@ -141,11 +145,13 @@ class SettingTableViewController: UITableViewController {
         if uni.checked == true {
 //            cell.accessoryType = .checkmark
             cell.tickImageView.isHidden = false
+            cell.internalSettingsCard.alpha = 1.0
 
             uni.checked = true
         } else  {
 //            cell.accessoryType = .none
             cell.tickImageView.isHidden = true
+            cell.internalSettingsCard.alpha = 0.50
 
             uni.checked = false
         }
