@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,44 +16,46 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" rowHeight="98" id="52m-Xw-eWg" customClass="SettingsTableViewCell" customModule="UniversityRating" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="538" height="98"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" rowHeight="81" id="52m-Xw-eWg" customClass="SettingsTableViewCell" customModule="UniversityRating" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="538" height="81"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="52m-Xw-eWg" id="JEf-gv-X3j">
-                <rect key="frame" x="0.0" y="0.0" width="538" height="97"/>
+                <rect key="frame" x="0.0" y="0.0" width="538" height="80.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RC8-D3-r1p">
-                        <rect key="frame" x="18" y="13" width="502" height="84"/>
+                        <rect key="frame" x="20" y="10" width="498" height="70"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module 201" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8vW-DI-3C3">
+                                <rect key="frame" x="20" y="23" width="94" height="24"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="vej-DC-m7d">
+                                <rect key="frame" x="457" y="19" width="31" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="dJP-vF-kEF"/>
+                                    <constraint firstAttribute="width" constant="31" id="hQ6-Ea-1XQ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vej-DC-m7d" firstAttribute="centerY" secondItem="RC8-D3-r1p" secondAttribute="centerY" id="6IX-6K-hsi"/>
+                            <constraint firstItem="8vW-DI-3C3" firstAttribute="centerY" secondItem="RC8-D3-r1p" secondAttribute="centerY" id="FWn-FN-bd1"/>
+                            <constraint firstItem="8vW-DI-3C3" firstAttribute="leading" secondItem="RC8-D3-r1p" secondAttribute="leading" constant="20" id="c8Q-qy-VUT"/>
+                            <constraint firstAttribute="width" constant="498" id="oS8-7S-xoX"/>
+                            <constraint firstAttribute="height" constant="70" id="oV1-zD-crz"/>
+                            <constraint firstAttribute="trailing" secondItem="vej-DC-m7d" secondAttribute="trailing" constant="10" id="wBx-ag-qOT"/>
+                        </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module 201" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vW-DI-3C3">
-                        <rect key="frame" x="38" y="48" width="463" height="23.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="463" id="gXh-Le-aRe"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="vej-DC-m7d">
-                        <rect key="frame" x="442" y="30" width="67" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="67" id="Csz-ah-wYd"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="8vW-DI-3C3" firstAttribute="leading" secondItem="JEf-gv-X3j" secondAttribute="leadingMargin" constant="30" id="6oS-St-5UE"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="vej-DC-m7d" secondAttribute="trailing" constant="21" id="BIf-zR-6hL"/>
-                    <constraint firstItem="RC8-D3-r1p" firstAttribute="centerX" secondItem="8vW-DI-3C3" secondAttribute="centerX" id="HIG-fv-of2"/>
-                    <constraint firstItem="8vW-DI-3C3" firstAttribute="top" secondItem="JEf-gv-X3j" secondAttribute="top" constant="48" id="Mpd-e0-xfZ"/>
-                    <constraint firstItem="RC8-D3-r1p" firstAttribute="leading" secondItem="JEf-gv-X3j" secondAttribute="leadingMargin" constant="10" id="Qtj-nJ-VO9"/>
-                    <constraint firstAttribute="bottom" secondItem="RC8-D3-r1p" secondAttribute="bottom" id="cDR-Cz-pYj"/>
-                    <constraint firstItem="RC8-D3-r1p" firstAttribute="top" secondItem="JEf-gv-X3j" secondAttribute="topMargin" constant="5" id="dJt-wA-Frc"/>
-                    <constraint firstItem="vej-DC-m7d" firstAttribute="top" secondItem="JEf-gv-X3j" secondAttribute="topMargin" constant="22" id="gZW-Ob-T7b"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="RC8-D3-r1p" secondAttribute="trailing" constant="10" id="pcH-2W-zGa"/>
-                    <constraint firstItem="RC8-D3-r1p" firstAttribute="centerY" secondItem="vej-DC-m7d" secondAttribute="centerY" id="t5v-aJ-org"/>
+                    <constraint firstAttribute="bottom" secondItem="RC8-D3-r1p" secondAttribute="bottom" id="7ae-nZ-s3e"/>
+                    <constraint firstAttribute="trailing" secondItem="RC8-D3-r1p" secondAttribute="trailing" constant="20" id="GtR-pO-ZBi"/>
+                    <constraint firstItem="RC8-D3-r1p" firstAttribute="leading" secondItem="JEf-gv-X3j" secondAttribute="leading" constant="20" id="LEQ-RI-Jau"/>
+                    <constraint firstItem="RC8-D3-r1p" firstAttribute="top" secondItem="JEf-gv-X3j" secondAttribute="top" constant="10" id="YV8-ec-cBh"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.90588235294117647" green="0.91764705882352937" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,7 +64,7 @@
                 <outlet property="moduleSelectionLabel" destination="8vW-DI-3C3" id="J5h-Pw-qtY"/>
                 <outlet property="tickImageView" destination="vej-DC-m7d" id="Xyt-Eo-NV9"/>
             </connections>
-            <point key="canvasLocation" x="-80" y="78"/>
+            <point key="canvasLocation" x="-78" y="47.5"/>
         </tableViewCell>
     </objects>
     <resources>
