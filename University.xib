@@ -23,7 +23,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="510" height="166"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bac-Qa-4wm">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bac-Qa-4wm" userLabel="InnerCard">
                         <rect key="frame" x="10" y="10" width="490" height="146.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUE-EF-d2l" userLabel="Green Line">
@@ -33,67 +33,107 @@
                                     <constraint firstAttribute="height" constant="1" id="oWe-TC-IEf"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-WS-Bfh" userLabel="Emoji Stack View">
-                                <rect key="frame" x="20" y="54.5" width="450" height="82"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qg-MI-IQl" userLabel="Poor">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="82"/>
-                                        <state key="normal" image="POOR"/>
-                                        <connections>
-                                            <action selector="emojiSelected:" destination="n31-pn-lY8" eventType="touchUpInside" id="CvL-O4-0t1"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKp-8u-lf5" userLabel="NotGreat">
-                                        <rect key="frame" x="90" y="0.0" width="90" height="82"/>
-                                        <state key="normal" image="NOT GREAT"/>
-                                        <connections>
-                                            <action selector="emojiSelected:" destination="n31-pn-lY8" eventType="touchUpInside" id="2y2-ue-rN0"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWZ-pw-aOe" userLabel="Satisfactory">
-                                        <rect key="frame" x="180" y="0.0" width="90" height="82"/>
-                                        <state key="normal" image="SATIS"/>
-                                        <connections>
-                                            <action selector="emojiSelected:" destination="n31-pn-lY8" eventType="touchUpInside" id="wKG-T7-M1X"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLv-TH-BYA" userLabel="Good">
-                                        <rect key="frame" x="270" y="0.0" width="90" height="82"/>
-                                        <state key="normal" image="GOOD"/>
-                                        <connections>
-                                            <action selector="emojiSelected:" destination="n31-pn-lY8" eventType="touchUpInside" id="4rk-0U-hpT"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwT-0v-pHH" userLabel="Amazing">
-                                        <rect key="frame" x="360" y="0.0" width="90" height="82"/>
-                                        <state key="normal" image="AMAZING"/>
-                                        <connections>
-                                            <action selector="emojiSelected:" destination="n31-pn-lY8" eventType="touchUpInside" id="OhO-QU-F4m"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="zlZ-zH-6VO">
                                 <rect key="frame" x="20" y="10" width="450" height="23.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Sqh-9Z-apn">
+                                <rect key="frame" x="20" y="54.5" width="450" height="82"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-WS-Bfh" userLabel="Emoji Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="450" height="61"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qg-MI-IQl" userLabel="Poor">
+                                                <rect key="frame" x="0.0" y="10.5" width="90" height="40"/>
+                                                <state key="normal" image="POOR"/>
+                                                <connections>
+                                                    <action selector="emojiSelected:" destination="n31-pn-lY8" eventType="touchUpInside" id="CvL-O4-0t1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKp-8u-lf5" userLabel="NotGreat">
+                                                <rect key="frame" x="90" y="10.5" width="90" height="40"/>
+                                                <state key="normal" image="NOT GREAT"/>
+                                                <connections>
+                                                    <action selector="emojiSelected:" destination="n31-pn-lY8" eventType="touchUpInside" id="2y2-ue-rN0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWZ-pw-aOe" userLabel="Satisfactory">
+                                                <rect key="frame" x="180" y="10" width="90" height="41"/>
+                                                <state key="normal" image="SATIS"/>
+                                                <connections>
+                                                    <action selector="emojiSelected:" destination="n31-pn-lY8" eventType="touchUpInside" id="wKG-T7-M1X"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLv-TH-BYA" userLabel="Good">
+                                                <rect key="frame" x="270" y="10" width="90" height="41"/>
+                                                <state key="normal" image="GOOD"/>
+                                                <connections>
+                                                    <action selector="emojiSelected:" destination="n31-pn-lY8" eventType="touchUpInside" id="4rk-0U-hpT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwT-0v-pHH" userLabel="Amazing">
+                                                <rect key="frame" x="360" y="10" width="90" height="41"/>
+                                                <state key="normal" image="AMAZING"/>
+                                                <connections>
+                                                    <action selector="emojiSelected:" destination="n31-pn-lY8" eventType="touchUpInside" id="OhO-QU-F4m"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YZD-5E-On5">
+                                        <rect key="frame" x="0.0" y="61" width="450" height="21"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DO5-kd-RF5">
+                                                <rect key="frame" x="0.0" y="3.5" width="90" height="14"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hZw-BB-H4a">
+                                                <rect key="frame" x="90" y="3.5" width="90" height="14"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ok" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zXE-SF-xbV">
+                                                <rect key="frame" x="180" y="3.5" width="90" height="14"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DLC-2x-va2">
+                                                <rect key="frame" x="270" y="3.5" width="90" height="14"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amazing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6JE-fT-Vf4">
+                                                <rect key="frame" x="360" y="3.5" width="90" height="14"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zlZ-zH-6VO" firstAttribute="top" secondItem="bac-Qa-4wm" secondAttribute="top" constant="10" id="1KK-2c-zTC"/>
                             <constraint firstItem="zlZ-zH-6VO" firstAttribute="centerX" secondItem="bac-Qa-4wm" secondAttribute="centerX" id="3xr-vM-VQg"/>
                             <constraint firstItem="NUE-EF-d2l" firstAttribute="leading" secondItem="bac-Qa-4wm" secondAttribute="leading" constant="20" id="73g-KR-Vcg"/>
+                            <constraint firstItem="Sqh-9Z-apn" firstAttribute="top" secondItem="NUE-EF-d2l" secondAttribute="bottom" constant="10" id="Aag-nA-6hE"/>
+                            <constraint firstItem="Sqh-9Z-apn" firstAttribute="top" secondItem="zlZ-zH-6VO" secondAttribute="bottom" constant="21" id="AoN-oH-Sg6"/>
                             <constraint firstItem="zlZ-zH-6VO" firstAttribute="leading" secondItem="bac-Qa-4wm" secondAttribute="leading" constant="20" id="Izc-zZ-21Q"/>
-                            <constraint firstItem="8cE-WS-Bfh" firstAttribute="top" secondItem="NUE-EF-d2l" secondAttribute="bottom" constant="10" id="MpD-Yv-yfm"/>
-                            <constraint firstItem="8cE-WS-Bfh" firstAttribute="top" secondItem="zlZ-zH-6VO" secondAttribute="bottom" constant="21" id="YrC-di-py1"/>
-                            <constraint firstAttribute="trailing" secondItem="8cE-WS-Bfh" secondAttribute="trailing" constant="20" id="af2-Xe-Q01"/>
-                            <constraint firstAttribute="bottom" secondItem="8cE-WS-Bfh" secondAttribute="bottom" constant="10" id="cJ9-fc-qJg"/>
-                            <constraint firstItem="8cE-WS-Bfh" firstAttribute="leading" secondItem="bac-Qa-4wm" secondAttribute="leading" constant="20" id="cg8-rr-iwh"/>
                             <constraint firstAttribute="trailing" secondItem="zlZ-zH-6VO" secondAttribute="trailing" constant="20" id="dYU-ba-N6A"/>
                             <constraint firstAttribute="trailing" secondItem="NUE-EF-d2l" secondAttribute="trailing" constant="20" id="kdg-Vu-fGW"/>
+                            <constraint firstAttribute="trailing" secondItem="Sqh-9Z-apn" secondAttribute="trailing" constant="20" id="npy-ba-kAe"/>
+                            <constraint firstAttribute="bottom" secondItem="Sqh-9Z-apn" secondAttribute="bottom" constant="10" id="pJo-nL-XBB"/>
                             <constraint firstItem="NUE-EF-d2l" firstAttribute="top" secondItem="zlZ-zH-6VO" secondAttribute="bottom" constant="10" id="uY0-Dz-n8J"/>
+                            <constraint firstItem="Sqh-9Z-apn" firstAttribute="leading" secondItem="bac-Qa-4wm" secondAttribute="leading" constant="20" id="utL-fF-4Ed"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -105,15 +145,17 @@
                     <constraint firstItem="bac-Qa-4wm" firstAttribute="leading" secondItem="MgJ-8G-wul" secondAttribute="leading" constant="10" id="otb-9k-7Tu"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.90588235289999997" green="0.91764705879999997" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="amazingButton" destination="fwT-0v-pHH" id="EDp-2x-UuR"/>
                 <outlet property="goodButton" destination="oLv-TH-BYA" id="aNL-uf-WEz"/>
+                <outlet property="innerCard" destination="bac-Qa-4wm" id="4ph-Is-kGt"/>
                 <outlet property="moduleLabel" destination="zlZ-zH-6VO" id="MlS-zL-BVr"/>
                 <outlet property="notGreatButton" destination="zKp-8u-lf5" id="dPv-eP-GAZ"/>
                 <outlet property="poorButton" destination="4qg-MI-IQl" id="69X-ND-xih"/>
                 <outlet property="satisfactoryButton" destination="RWZ-pw-aOe" id="QyY-j5-8wt"/>
             </connections>
-            <point key="canvasLocation" x="-284" y="-6.5"/>
+            <point key="canvasLocation" x="-286" y="5"/>
         </tableViewCell>
     </objects>
     <resources>

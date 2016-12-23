@@ -24,12 +24,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slI-tT-eK7">
-                        <rect key="frame" x="7" y="8" width="359" height="62"/>
+                        <rect key="frame" x="90" y="8" width="199" height="62"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="62" id="btM-fO-BX2"/>
-                            <constraint firstAttribute="width" constant="359" id="zvx-Vf-4OU"/>
+                            <constraint firstAttribute="width" constant="199" id="zvx-Vf-4OU"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
                         <state key="normal" title="SUBMIT ALL MODULES" backgroundImage="submit-bg"/>
                         <connections>
                             <action selector="submitAllModulesPressed:" destination="riE-uJ-cFs" eventType="touchUpInside" id="Eci-nL-Sbz"/>
@@ -37,7 +37,7 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="slI-tT-eK7" firstAttribute="centerX" secondItem="CdS-JE-1cS" secondAttribute="centerX" id="ERu-iq-UG6"/>
+                    <constraint firstItem="slI-tT-eK7" firstAttribute="centerX" secondItem="CdS-JE-1cS" secondAttribute="centerX" constant="3.5" id="ERu-iq-UG6"/>
                     <constraint firstItem="slI-tT-eK7" firstAttribute="centerY" secondItem="CdS-JE-1cS" secondAttribute="centerY" id="JwB-0H-dZl"/>
                 </constraints>
             </tableViewCellContentView>

@@ -24,9 +24,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CI4-6q-u7S">
-                        <rect key="frame" x="7" y="8" width="359" height="62"/>
+                        <rect key="frame" x="111.5" y="8" width="150" height="62"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="359" id="3u4-QH-Bhy"/>
+                            <constraint firstAttribute="width" constant="150" id="3u4-QH-Bhy"/>
                             <constraint firstAttribute="height" constant="62" id="eBj-su-xsa"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>

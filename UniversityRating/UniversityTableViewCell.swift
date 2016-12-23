@@ -18,6 +18,8 @@ class UniversityTableViewCell: UITableViewCell {
     @IBOutlet weak var moduleLabel: UILabel!
     var universitObject = University()
     
+    @IBOutlet weak var innerCard: UIView!
+    
     @IBOutlet weak var poorButton: UIButton!
     @IBOutlet weak var notGreatButton: UIButton!
     @IBOutlet weak var satisfactoryButton: UIButton!
@@ -30,6 +32,7 @@ class UniversityTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        innerCard.layer.cornerRadius = 5
         setupEmoji()
         buttonArray = [poorButton, notGreatButton, satisfactoryButton, goodButton, amazingButton] // Buttons have now loaded in the view
         
