@@ -101,7 +101,7 @@ class SettingTableViewController: UITableViewController {
     //MARK: HeaderView
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 70))
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 35))
         if (section == 0) {
             return self.settingsHeaderCell(section: section)
         } else {
@@ -111,7 +111,7 @@ class SettingTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 70
+        return 35
     }
     
     //MARK: FooterView
