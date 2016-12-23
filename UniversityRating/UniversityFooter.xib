@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="OpenSans-Regular.ttf">
-            <string>OpenSans</string>
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
         </array>
     </customFonts>
     <objects>
@@ -23,22 +23,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="372" height="77"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ito-pb-eix">
+                        <rect key="frame" x="0.0" y="0.0" width="372" height="77"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slI-tT-eK7">
                         <rect key="frame" x="90" y="8" width="199" height="62"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="62" id="btM-fO-BX2"/>
                             <constraint firstAttribute="width" constant="199" id="zvx-Vf-4OU"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="12"/>
                         <state key="normal" title="SUBMIT ALL MODULES" backgroundImage="submit-bg"/>
                         <connections>
                             <action selector="submitAllModulesPressed:" destination="riE-uJ-cFs" eventType="touchUpInside" id="Eci-nL-Sbz"/>
                         </connections>
                     </button>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
+                    <constraint firstItem="ito-pb-eix" firstAttribute="leading" secondItem="CdS-JE-1cS" secondAttribute="leading" id="0gy-IW-KlJ"/>
                     <constraint firstItem="slI-tT-eK7" firstAttribute="centerX" secondItem="CdS-JE-1cS" secondAttribute="centerX" constant="3.5" id="ERu-iq-UG6"/>
                     <constraint firstItem="slI-tT-eK7" firstAttribute="centerY" secondItem="CdS-JE-1cS" secondAttribute="centerY" id="JwB-0H-dZl"/>
+                    <constraint firstItem="ito-pb-eix" firstAttribute="top" secondItem="CdS-JE-1cS" secondAttribute="top" id="fgn-Mc-aDX"/>
+                    <constraint firstAttribute="bottom" secondItem="ito-pb-eix" secondAttribute="bottom" id="iYe-jL-k7y"/>
+                    <constraint firstAttribute="trailing" secondItem="ito-pb-eix" secondAttribute="trailing" id="n6V-67-hQ8"/>
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="-26" y="-169"/>
