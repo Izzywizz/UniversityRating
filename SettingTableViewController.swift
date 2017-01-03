@@ -12,18 +12,14 @@ class SettingTableViewController: UITableViewController {
     
     
     //MARK: Stored Properties
-    let universityArray = UniversityModel.sharedIntstance.universityArray
+    var universityArray = UniversityModel.sharedIntstance.universityArray
     var selectedRow: IndexPath?
     
     
     //MARK: UIView Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        UniversityModel.sharedIntstance.createUniversityArray()
         tableSetup()
-        
-        
-        
         getDayOfWeek()
         
     }
@@ -61,12 +57,6 @@ class SettingTableViewController: UITableViewController {
         default: print("Not a Weekday")
         }
         return weekday
-        //        let todayDate = NSDate()
-        //        let myCalendar = NSCalendar(calendarIdentifier: .gregorian)
-        //        let myComponents = myCalendar?.components(.weekday, from: todayDate as Date)
-        //        let weekDay = myComponents?.weekday
-        //        print("Date: \(weekDay)")
-        //        return weekDay
     }
     
     

@@ -17,7 +17,7 @@ class UniversityTableViewCell: UITableViewCell {
     //MARK: Stored Properties
     @IBOutlet weak var moduleLabel: UILabel!
     var universitObject = University()
-    
+
     @IBOutlet weak var innerCard: UIView!
     
     @IBOutlet weak var poorButton: UIButton!
@@ -40,16 +40,22 @@ class UniversityTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         // Configure the view for the selected state
     }
     
     
     //MARK: Setup Cell with University Object information
-    // Ensure specific University cell data is being picked up, so that each cell has the appropiate module name
+    /**
+     Ensure specific University cell data is being picked up, so that each cell has the appropiate module name
+     */
     func configureCell() {
         moduleLabel.text = "\(universitObject.question)"
-//        moduleLabel.text = "What do you think of Module \(universitObject.module)"
+        
+        //Ensure that the ratings from the preivous selection is maintained
+        if let buttonRating = Int(universitObject.rating)   {
+            let button = buttonArray[buttonRating]
+            button.isSelected = true
+        }
     }
     
     //MARK: Action Methods
@@ -80,7 +86,7 @@ class UniversityTableViewCell: UITableViewCell {
             sender.isSelected = !sender.isSelected;
         }
         
-//        print(sender.tag)
+        //        print(sender.tag)
         universitObject.rating = String(sender.tag)
     }
     
