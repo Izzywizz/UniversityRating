@@ -8,7 +8,7 @@
 		<key>question</key>
 		<string>What do you think of the Quantum and Atomic Physics module</string>
 		<key>rating</key>
-		<string>none</string>
+		<string></string>
 		<key>checked</key>
 		<false/>
 	</dict>
@@ -18,7 +18,7 @@
 		<key>question</key>
 		<string>What do you think of the Nuclear and Particle Physic module</string>
 		<key>rating</key>
-		<string>none</string>
+		<string></string>
 		<key>checked</key>
 		<false/>
 	</dict>
@@ -28,7 +28,7 @@
 		<key>question</key>
 		<string>What do you think of the Working with Physics II module</string>
 		<key>rating</key>
-		<string>none</string>
+		<string></string>
 		<key>checked</key>
 		<false/>
 	</dict>
@@ -38,7 +38,7 @@
 		<key>question</key>
 		<string>What do you think of Mathematics for Physicists IV module</string>
 		<key>rating</key>
-		<string>none</string>
+		<string></string>
 		<key>checked</key>
 		<false/>
 	</dict>

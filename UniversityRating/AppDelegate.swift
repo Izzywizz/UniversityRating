@@ -12,11 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let universityArray = UniversityModel.sharedIntstance.universityArray
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UniversityModel.sharedIntstance.createUniversityArray() // this creates all the objects again
-
+        getDayOfWeek()
         
         return true
     }
@@ -43,6 +45,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    //MARK: Time/Reset Methods
+    /**
+     Method that returns the day of the week as an optional Int, sunday = 1 ... satruday = 7
+     - returns: Optional Int
+     */
+    func getDayOfWeek()->Int? {
+        let weekday = NSCalendar.current.component(.weekday, from: Date())
+        switch (weekday) {
+        case 2:
+            print("Monday Found - Reset Scores")
+            UniversityModel.sharedIntstance.resetRating()
 
+        default: print("Not a Weekday we care about")
+        }
+        return weekday
+    }
 }
 

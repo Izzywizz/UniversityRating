@@ -12,7 +12,7 @@ class SettingTableViewController: UITableViewController {
     
     
     //MARK: Stored Properties
-    var universityArray = UniversityModel.sharedIntstance.universityArray
+    let universityArray = UniversityModel.sharedIntstance.universityArray
     var selectedRow: IndexPath?
     
     
@@ -20,7 +20,6 @@ class SettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableSetup()
-        getDayOfWeek()
         
     }
     
@@ -40,24 +39,7 @@ class SettingTableViewController: UITableViewController {
     
     
     //MARK: Helper Methods
-    /**
-     Method that returns the day of the week as an optional Int, sunday = 1 ... satruday = 7
-     - returns: Optional Int
-     */
-    func getDayOfWeek()->Int? {
-        let weekday = NSCalendar.current.component(.weekday, from: Date())
-        switch (weekday) {
-            case 1: print("Sunday")
-            case 2: print("Monday")
-            case 3: print("Tuesday")
-            case 4: print("Wednesday")
-            case 5: print("Thursday")
-            case 6: print("Friday")
-            case 7: print("Saturday")
-        default: print("Not a Weekday")
-        }
-        return weekday
-    }
+
     
     
     //MARK: TableSetup

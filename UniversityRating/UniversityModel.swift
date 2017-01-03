@@ -28,6 +28,13 @@ final class UniversityModel {
 //            print("Array Count: \(universityArray.count)")
         }
     }
+    
+    func resetRating() {
+        for index in universityArray {
+            let university = index as! University
+            university.rating = ""
+        }
+    }
 }
 
 

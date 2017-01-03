@@ -12,7 +12,7 @@ class RatingTableViewController: UITableViewController {
     
     
     //MARK: Stored Properties
-    var universityArray = UniversityModel.sharedIntstance.universityArray
+    let universityArray = UniversityModel.sharedIntstance.universityArray
     
     
     //MARK: UI Methods
@@ -114,7 +114,6 @@ class RatingTableViewController: UITableViewController {
             print("Rating: \(university.rating)")
         }
         self.tableView.isUserInteractionEnabled = false
-
     }
     
     func addListeningObserver() {

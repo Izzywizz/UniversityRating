@@ -51,7 +51,7 @@ class UniversityTableViewCell: UITableViewCell {
     func configureCell() {
         moduleLabel.text = "\(universitObject.question)"
         
-        //Ensure that the ratings from the preivous selection is maintained
+        //Ensure that the ratings from the preivous selection is maintained, if it returns an optional then the state doesn't need to be selected does it!
         if let buttonRating = Int(universitObject.rating)   {
             let button = buttonArray[buttonRating]
             button.isSelected = true
