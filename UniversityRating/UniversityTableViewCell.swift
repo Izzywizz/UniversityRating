@@ -45,9 +45,11 @@ class UniversityTableViewCell: UITableViewCell {
     }
     
     
-    //MARK: Ensure specific University cell data is being picked up, so that each cell has the appropiate module name
+    //MARK: Setup Cell with University Object information
+    // Ensure specific University cell data is being picked up, so that each cell has the appropiate module name
     func configureCell() {
-        moduleLabel.text = "What do you think of Module \(universitObject.module)"
+        moduleLabel.text = "\(universitObject.question)"
+//        moduleLabel.text = "What do you think of Module \(universitObject.module)"
     }
     
     //MARK: Action Methods

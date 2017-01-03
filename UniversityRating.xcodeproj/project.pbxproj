@@ -113,7 +113,6 @@
 				43015D821E09427E0085D3B0 /* Assets.xcassets */,
 				43015D841E09427E0085D3B0 /* LaunchScreen.storyboard */,
 				43015D871E09427E0085D3B0 /* Info.plist */,
-				43015D941E094AED0085D3B0 /* University.plist */,
 			);
 			path = UniversityRating;
 			sourceTree = "<group>";
@@ -132,6 +131,7 @@
 		431D87FC1E097574001735D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				43015D941E094AED0085D3B0 /* University.plist */,
 				43015D921E0944A60085D3B0 /* UniversityModel.swift */,
 			);
 			name = Model;

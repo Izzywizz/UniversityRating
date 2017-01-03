@@ -10,15 +10,22 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
     
+    
     //MARK: Stored Properties
     let universityArray = UniversityModel.sharedIntstance.universityArray
     var selectedRow: IndexPath?
+    
     
     //MARK: UIView Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         UniversityModel.sharedIntstance.createUniversityArray()
         tableSetup()
+        
+        
+        
+        getDayOfWeek()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +43,33 @@ class SettingTableViewController: UITableViewController {
     }
     
     
+    //MARK: Helper Methods
+    /**
+     Method that returns the day of the week as an optional Int, sunday = 1 ... satruday = 7
+     - returns: Optional Int
+     */
+    func getDayOfWeek()->Int? {
+        let weekday = NSCalendar.current.component(.weekday, from: Date())
+        switch (weekday) {
+            case 1: print("Sunday")
+            case 2: print("Monday")
+            case 3: print("Tuesday")
+            case 4: print("Wednesday")
+            case 5: print("Thursday")
+            case 6: print("Friday")
+            case 7: print("Saturday")
+        default: print("Not a Weekday")
+        }
+        return weekday
+        //        let todayDate = NSDate()
+        //        let myCalendar = NSCalendar(calendarIdentifier: .gregorian)
+        //        let myComponents = myCalendar?.components(.weekday, from: todayDate as Date)
+        //        let weekDay = myComponents?.weekday
+        //        print("Date: \(weekDay)")
+        //        return weekDay
+    }
+    
+    
     //MARK: TableSetup
     func tableSetup() {
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -43,14 +77,14 @@ class SettingTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "SettingsHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "settingsHeaderCell")
     }
     
-
+    
     //MARK: Observer Methods
     func moveToRatingTableView() {
         print("Moving to Rating Table view")
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let ratingVC = storyboard.instantiateViewController(withIdentifier: "RatingTableViewController") as! RatingTableViewController
         self.navigationController?.show(ratingVC, sender: nil)
-//        self.present(ratingVC, animated:true, completion:nil)
+        //        self.present(ratingVC, animated:true, completion:nil)
     }
     
     func addListeningObserver() {
@@ -61,46 +95,46 @@ class SettingTableViewController: UITableViewController {
     }
     
     
-
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return universityArray.count
     }
     
+    
     //MARK: Selection/ Checkmark method
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
+        
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "settingsCell", for: indexPath) as! SettingsTableViewCell
         let uni = universityArray.object(at: indexPath.row) as! University
         
         if uni.checked == false {
-//            cell.accessoryType = .checkmark
+            //            cell.accessoryType = .checkmark
             cell.tickImageView.isHidden = false
             cell.internalSettingsCard.alpha = 1.0
-
+            
             uni.checked = true
         } else {
-//            cell.accessoryType = .none
+            //            cell.accessoryType = .none
             cell.tickImageView.isHidden = true
             cell.internalSettingsCard.alpha = 0.5
-
+            
             uni.checked = false
         }
         
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
+    
     //MARK: Creating Cells
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         return self.settingsCellAtIndex(indexPath: indexPath)
     }
+    
     
     //MARK: HeaderView
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
@@ -118,6 +152,7 @@ class SettingTableViewController: UITableViewController {
         return 40
     }
     
+    
     //MARK: FooterView
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 70))
@@ -133,6 +168,7 @@ class SettingTableViewController: UITableViewController {
         return 70
     }
     
+    
     //MARK: Custom Cells
     func settingsCellAtIndex(indexPath: IndexPath) -> SettingsTableViewCell {
         
@@ -143,16 +179,16 @@ class SettingTableViewController: UITableViewController {
         cell.configureCell()
         
         if uni.checked == true {
-//            cell.accessoryType = .checkmark
+            //            cell.accessoryType = .checkmark
             cell.tickImageView.isHidden = false
             cell.internalSettingsCard.alpha = 1.0
-
+            
             uni.checked = true
         } else  {
-//            cell.accessoryType = .none
+            //            cell.accessoryType = .none
             cell.tickImageView.isHidden = true
             cell.internalSettingsCard.alpha = 0.50
-
+            
             uni.checked = false
         }
         
@@ -172,8 +208,5 @@ class SettingTableViewController: UITableViewController {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "settingsFooterCell") as! SettingsFooterTableViewCell
         
         return  cell
-        
     }
-
-    
 }

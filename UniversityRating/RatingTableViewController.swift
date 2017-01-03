@@ -35,6 +35,7 @@ class RatingTableViewController: UITableViewController {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "submitCourseFeedback"), object: nil)
     }
     
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -77,6 +78,7 @@ class RatingTableViewController: UITableViewController {
         }
     }
     
+    
     //MARK: Custom Cells
     func universityCellAtIndex(indexPath: IndexPath) -> UniversityTableViewCell {
         
@@ -98,6 +100,7 @@ class RatingTableViewController: UITableViewController {
         
     }
     
+    
     //MARK: Observer Methods
     func submitCourseFeedback() {
         print("Submit")
@@ -105,7 +108,7 @@ class RatingTableViewController: UITableViewController {
             let university = index as! University
             print("Rating: \(university.rating)")
         }
-
+        
     }
     
     func addListeningObserver() {

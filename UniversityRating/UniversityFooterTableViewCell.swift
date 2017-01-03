@@ -9,6 +9,7 @@
 import UIKit
 
 class UniversityFooterTableViewCell: UITableViewCell {
+    @IBOutlet weak var submitButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +24,8 @@ class UniversityFooterTableViewCell: UITableViewCell {
 
     @IBAction func submitAllModulesPressed(_ sender: UIButton) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "submitCourseFeedback"), object: nil)
+        submitButton.setTitle("Feedback Submitted!", for: .normal)
+        submitButton.alpha = 0.5
+        submitButton.isUserInteractionEnabled = false
     }
 }
