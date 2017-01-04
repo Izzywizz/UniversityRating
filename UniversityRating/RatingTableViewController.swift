@@ -137,4 +137,13 @@ class RatingTableViewController: UITableViewController {
     @IBAction func settingsButtonPressed(_ sender: UIBarButtonItem) {
         _ = self.navigationController?.popViewController(animated: true)
     }
+    
+    
+    @IBAction func resetButtonPressed(_ sender: UIBarButtonItem) {
+        print("Reset")
+    }
+    
+    
+    
+    
 }

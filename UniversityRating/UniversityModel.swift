@@ -37,9 +37,7 @@ final class UniversityModel {
             universityArray.add(uni)
             
         }
-        
     }
-    
     
     func resetRatingAndChecked() {
         for index in universityArray {
@@ -70,7 +68,7 @@ class University    {
     }
     
     /**
-     This is the swift version of university creation from a dictionary, 
+     This is the swift version of the university creation from a dictionary, with the included optional unpacked for the Bool
      */
     func createUniversityFromDictSwift( dict: NSDictionary) -> University {
         

@@ -12,8 +12,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    let universityArray = UniversityModel.sharedIntstance.universityArray
-    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -21,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if savedUniversityDic()
         {
-            print("Items need to be created")
+            print("Items need to be created, off you go savedUniversityDic() ")
         } else  {
             UniversityModel.sharedIntstance.createUniversityArray() // this creates all the objects again
         }
@@ -76,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /**
      Method that checks whether the instance has been saved, by using optionals and guard statements
      The method returns false if nothing has been saved in the NSUserDefaults then you hop out of the method, if true, 
-     the method calls the sharedInstance method that deals with creating the previously saved 
+     the method calls the sharedInstance method that deals with creating the previously saved
      - returns: Bool, True - Data has been saved, False - No save data
      */
     func savedUniversityDic() -> Bool {
