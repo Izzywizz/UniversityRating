@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="510" height="167"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n31-pn-lY8" id="MgJ-8G-wul">
-                <rect key="frame" x="0.0" y="0.0" width="510" height="166"/>
+                <rect key="frame" x="0.0" y="0.0" width="510" height="166.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bac-Qa-4wm" userLabel="InnerCard">

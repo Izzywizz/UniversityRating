@@ -26,7 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UniversityModel.sharedIntstance.createUniversityArray() // this creates all the objects again
         }
         
-        getDayOfWeek()
+        let day = getDayOfWeek()
+        print("DAY: \(day)")
         
         return true
     }
@@ -63,15 +64,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switch (weekday) {
         case 2:
             print("Monday Found - Reset Scores")
-            UniversityModel.sharedIntstance.resetRating()
+            UniversityModel.sharedIntstance.resetRatingAndChecked()
             
-        default: print("Not a Weekday we care about")
+        default: print("Not a Weekday we care about: No Reset necessary")
         }
         return weekday
     }
     
     //MARK: Saved Instance Methods
     
+    /**
+     Method that checks whether the instance has been saved, by using optionals and guard statements
+     The method returns false if nothing has been saved in the NSUserDefaults then you hop out of the method, if true, 
+     the method calls the sharedInstance method that deals with creating the previously saved 
+     - returns: Bool, True - Data has been saved, False - No save data
+     */
     func savedUniversityDic() -> Bool {
         
         guard let loadedUniversities = UserDefaults.standard.array(forKey: "myUniversityDic") as? [[String: Any]] else {

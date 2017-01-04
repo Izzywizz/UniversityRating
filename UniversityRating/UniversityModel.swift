@@ -31,9 +31,9 @@ final class UniversityModel {
     
     func createSavedUniversityArray(savedArray: [[String: Any]]) {
         for index in savedArray {
-            print("TEST: \(index)")
+            //            print("TEST: \(index)")
             let uni: University = University().createUniversityFromDictSwift(dict: index as NSDictionary)
-            print("TEST: \(uni.module)")
+            //            print("TEST: \(uni.module)")
             universityArray.add(uni)
             
         }
@@ -41,10 +41,11 @@ final class UniversityModel {
     }
     
     
-    func resetRating() {
+    func resetRatingAndChecked() {
         for index in universityArray {
             let university = index as! University
             university.rating = ""
+            university.checked = false
         }
     }
 }
@@ -64,10 +65,13 @@ class University    {
         self.question = dict.value(forKey: "question") as! String
         self.rating = dict.value(forKey: "rating") as! String
         self.checked = dict.value(forKey: "checked") as! Bool
-
+        
         return self
     }
     
+    /**
+     This is the swift version of university creation from a dictionary, 
+     */
     func createUniversityFromDictSwift( dict: NSDictionary) -> University {
         
         self.module = dict.value(forKey: "module") as! String
