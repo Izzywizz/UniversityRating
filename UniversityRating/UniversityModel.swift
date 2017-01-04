@@ -29,6 +29,7 @@ final class UniversityModel {
         }
     }
     
+    
     func resetRating() {
         for index in universityArray {
             let university = index as! University

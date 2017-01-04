@@ -38,11 +38,6 @@
                                 <action selector="settingsButtonPressed:" destination="zkj-Yz-LIQ" id="Uuy-eK-yae"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="zOb-V0-pSx">
-                            <connections>
-                                <action selector="resetButton:" destination="zkj-Yz-LIQ" id="D3x-yT-kLw"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>

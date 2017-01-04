@@ -13,7 +13,8 @@ class RatingTableViewController: UITableViewController {
     
     //MARK: Stored Properties
     let universityArray = UniversityModel.sharedIntstance.universityArray
-    
+    var universityDic: [[String: Any]] = []
+
     
     //MARK: UI Methods
     override func viewDidLoad() {
@@ -101,6 +102,10 @@ class RatingTableViewController: UITableViewController {
         
     }
     
+    //MARK: Object Persistence
+    func saveStateOf(_ university: University) {
+        universityDic.append(["module": "\(university.module)", "question": "\(university.question)", "rating": "\(university.rating)", "checked": "\(university.checked)"])
+    }
     
     //MARK: Observer Methods
     
@@ -111,9 +116,13 @@ class RatingTableViewController: UITableViewController {
         print("Submit")
         for index in universityArray {
             let university = index as! University
+            saveStateOf(university)
             print("Rating: \(university.rating)")
         }
+        
+        UserDefaults.standard.set(universityDic, forKey: "myUniversityDic")
         self.tableView.isUserInteractionEnabled = false
+        
     }
     
     func addListeningObserver() {
