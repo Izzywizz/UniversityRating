@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else  {
             UniversityModel.sharedIntstance.createUniversityArray() // this creates all the objects again
         }
+        
         getDayOfWeek()
         
         return true
@@ -78,7 +79,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         print("Saved")
-        print(loadedUniversities)
+//        print(loadedUniversities)
+        UniversityModel.sharedIntstance.createSavedUniversityArray(savedArray: loadedUniversities)
         return true
     }
 }

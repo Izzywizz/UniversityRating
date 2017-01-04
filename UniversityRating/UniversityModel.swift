@@ -16,17 +16,28 @@ final class UniversityModel {
     
     // Can't init is singleton
     private init() { }
-
+    
     //MARK: Local Variable/ methods
     var universityArray = NSMutableArray()
-
-    func createUniversityArray() {        
-        for dict in University().plistParser(plistName: "University") {
-            let uni: University = University().createUniversityFromDict(dict: dict as! NSDictionary)
+    
+    func createUniversityArray() {
+        for array in University().plistParser(plistName: "University") {
+            let uni: University = University().createUniversityFromDict(dict: array as! NSDictionary)
             universityArray.add(uni)
-//            print("Module: \(uni.module), question: \(uni.question) rating: \(uni.rating) checked: \(uni.checked)")
-//            print("Array Count: \(universityArray.count)")
+            //            print("Module: \(uni.module), question: \(uni.question) rating: \(uni.rating) checked: \(uni.checked)")
+            //            print("Array Count: \(universityArray.count)")
         }
+    }
+    
+    func createSavedUniversityArray(savedArray: [[String: Any]]) {
+        for index in savedArray {
+            print("TEST: \(index)")
+            let uni: University = University().createUniversityFromDictSwift(dict: index as NSDictionary)
+            print("TEST: \(uni.module)")
+            universityArray.add(uni)
+            
+        }
+        
     }
     
     
@@ -53,9 +64,24 @@ class University    {
         self.question = dict.value(forKey: "question") as! String
         self.rating = dict.value(forKey: "rating") as! String
         self.checked = dict.value(forKey: "checked") as! Bool
+
+        return self
+    }
+    
+    func createUniversityFromDictSwift( dict: NSDictionary) -> University {
+        
+        self.module = dict.value(forKey: "module") as! String
+        self.question = dict.value(forKey: "question") as! String
+        self.rating = dict.value(forKey: "rating") as! String
+        
+        if let checked = dict.value(forKey: "checked") {
+            self.checked = Bool (checked as! String)!
+        }
         
         return self
     }
+    
+    
     
     func plistParser(plistName: String) -> NSArray {
         if let path = Bundle.main.path(forResource: plistName, ofType: "plist") {
