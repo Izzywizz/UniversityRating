@@ -11,6 +11,8 @@
 		<string></string>
 		<key>checked</key>
 		<false/>
+		<key>submitted</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>module</key>
@@ -21,6 +23,8 @@
 		<string></string>
 		<key>checked</key>
 		<false/>
+		<key>submitted</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>module</key>
@@ -31,6 +35,8 @@
 		<string></string>
 		<key>checked</key>
 		<false/>
+		<key>submitted</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>module</key>
@@ -41,6 +47,8 @@
 		<string></string>
 		<key>checked</key>
 		<false/>
+		<key>submitted</key>
+		<string></string>
 	</dict>
 </array>
 </plist>

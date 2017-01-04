@@ -87,6 +87,8 @@ class UniversityTableViewCell: UITableViewCell {
         }
         
         //        print(sender.tag)
+//        let currentTimeStamp = NSDate()
+//        universitObject.timestamp = "\(currentTimeStamp)"
         universitObject.rating = String(sender.tag)
     }
     
@@ -115,6 +117,8 @@ class UniversityTableViewCell: UITableViewCell {
             }
         }
     }
+    
+
 }
 
 

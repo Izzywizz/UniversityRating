@@ -60,9 +60,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func getDayOfWeek()->Int? {
         let weekday = NSCalendar.current.component(.weekday, from: Date())
         switch (weekday) {
-        case 2:
+//        case 2:
+//            print("Monday Found - Reset Scores")
+//            UniversityModel.sharedIntstance.resetRatingCheckedAndTimestamp()
+        case 5:
             print("Monday Found - Reset Scores")
-            UniversityModel.sharedIntstance.resetRatingAndChecked()
+            UniversityModel.sharedIntstance.resetRatingCheckedAndTimestamp()
             
         default: print("Not a Weekday we care about: No Reset necessary")
         }
@@ -85,6 +88,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         print("Saved")
 //        print(loadedUniversities)
+        let hasFeedbackSubmitted = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
+        print("BOOL: \(hasFeedbackSubmitted)")
+        
         UniversityModel.sharedIntstance.createSavedUniversityArray(savedArray: loadedUniversities)
         return true
     }

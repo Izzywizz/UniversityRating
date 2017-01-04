@@ -14,13 +14,13 @@ class RatingTableViewController: UITableViewController {
     //MARK: Stored Properties
     let universityArray = UniversityModel.sharedIntstance.universityArray
     var universityDic: [[String: Any]] = []
-
+    var hasFeedbackBeenSubmitted = false
     
     //MARK: UI Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Table View loaded")
-
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,6 +30,8 @@ class RatingTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         addListeningObserver()
+        hasFeedbackBeenSubmitted = false
+        UserDefaults.standard.set(hasFeedbackBeenSubmitted, forKey: "feedbackSubmitted")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -90,6 +92,15 @@ class RatingTableViewController: UITableViewController {
         cell.universitObject = uni
         cell.configureCell()
         
+        if !UserDefaults.standard.bool(forKey: "feedbackSubmitted") && uni.timestamp.isEmpty  {
+            print("No timestamp")
+            cell.isUserInteractionEnabled = true
+        } else  {
+            print("timeStamp set")
+            cell.innerCard.backgroundColor = UIColor.yellow
+            cell.isUserInteractionEnabled = false
+        }
+        
         return cell
         
     }
@@ -102,9 +113,19 @@ class RatingTableViewController: UITableViewController {
         
     }
     
+    //MARK: Helper Methods
+    func timestampSubmittedFeedbackFor(_ university: University) {
+        if university.checked {
+            let currentTimeStamp = NSDate()
+            university.timestamp = "\(currentTimeStamp)"
+        } else  {
+            university.timestamp = ""
+        }
+    }
+    
     //MARK: Object Persistence
     func saveStateOf(_ university: University) {
-        universityDic.append(["module": "\(university.module)", "question": "\(university.question)", "rating": "\(university.rating)", "checked": "\(university.checked)"])
+        universityDic.append(["module": "\(university.module)", "question": "\(university.question)", "rating": "\(university.rating)", "checked": "\(university.checked)", "submitted": "\(university.timestamp)"])
     }
     
     //MARK: Observer Methods
@@ -116,13 +137,18 @@ class RatingTableViewController: UITableViewController {
         print("Submit")
         for index in universityArray {
             let university = index as! University
+            
+            timestampSubmittedFeedbackFor(university)
             saveStateOf(university)
+            
             print("Rating: \(university.rating)")
+            print("TimeStamp: \(university.timestamp)")
         }
         
+        hasFeedbackBeenSubmitted = true
+        UserDefaults.standard.set(hasFeedbackBeenSubmitted, forKey: "feedbackSubmitted")
         UserDefaults.standard.set(universityDic, forKey: "myUniversityDic")
         self.tableView.isUserInteractionEnabled = false
-        
     }
     
     func addListeningObserver() {
@@ -141,6 +167,8 @@ class RatingTableViewController: UITableViewController {
     
     @IBAction func resetButtonPressed(_ sender: UIBarButtonItem) {
         print("Reset")
+        UniversityModel.sharedIntstance.resetRatingCheckedAndTimestamp()
+        tableView.reloadData()
     }
     
     

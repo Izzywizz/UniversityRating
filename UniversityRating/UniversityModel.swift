@@ -27,6 +27,7 @@ final class UniversityModel {
             //            print("Module: \(uni.module), question: \(uni.question) rating: \(uni.rating) checked: \(uni.checked)")
             //            print("Array Count: \(universityArray.count)")
         }
+
     }
     
     func createSavedUniversityArray(savedArray: [[String: Any]]) {
@@ -39,11 +40,12 @@ final class UniversityModel {
         }
     }
     
-    func resetRatingAndChecked() {
+    func resetRatingCheckedAndTimestamp() {
         for index in universityArray {
             let university = index as! University
             university.rating = ""
             university.checked = false
+            university.timestamp = ""
         }
     }
 }
@@ -55,7 +57,7 @@ class University    {
     var question = ""
     var rating = ""
     var checked = false
-    
+    var timestamp = ""
     
     func createUniversityFromDict( dict: NSDictionary) -> University {
         
@@ -63,6 +65,7 @@ class University    {
         self.question = dict.value(forKey: "question") as! String
         self.rating = dict.value(forKey: "rating") as! String
         self.checked = dict.value(forKey: "checked") as! Bool
+        self.timestamp = dict.value(forKey: "submitted") as! String
         
         return self
     }
@@ -79,6 +82,9 @@ class University    {
         if let checked = dict.value(forKey: "checked") {
             self.checked = Bool (checked as! String)!
         }
+        
+        self.timestamp = dict.value(forKey: "submitted") as! String
+
         
         return self
     }
