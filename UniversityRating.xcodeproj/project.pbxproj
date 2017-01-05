@@ -201,6 +201,7 @@
 					43015D771E09427E0085D3B0 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 6HA878TP6G;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};

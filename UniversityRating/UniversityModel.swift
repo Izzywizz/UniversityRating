@@ -15,14 +15,14 @@ final class UniversityModel {
     static let sharedIntstance = UniversityModel()
     
     // Can't init is singleton
-    private init() { }
+    fileprivate init() { }
     
     //MARK: Local Variable/ methods
     var universityArray = NSMutableArray()
     
     func createUniversityArray() {
-        for array in University().plistParser(plistName: "University") {
-            let uni: University = University().createUniversityFromDict(dict: array as! NSDictionary)
+        for array in University().plistParser("University") {
+            let uni: University = University().createUniversityFromDict(array as! NSDictionary)
             universityArray.add(uni)
             //            print("Module: \(uni.module), question: \(uni.question) rating: \(uni.rating) checked: \(uni.checked)")
             //            print("Array Count: \(universityArray.count)")
@@ -30,10 +30,10 @@ final class UniversityModel {
 
     }
     
-    func createSavedUniversityArray(savedArray: [[String: Any]]) {
+    func createSavedUniversityArray(_ savedArray: [[String: Any]]) {
         for index in savedArray {
             //            print("TEST: \(index)")
-            let uni: University = University().createUniversityFromDictSwift(dict: index as NSDictionary)
+            let uni: University = University().createUniversityFromDictSwift(index as NSDictionary)
             //            print("TEST: \(uni.module)")
             universityArray.add(uni)
             
@@ -59,7 +59,7 @@ final class UniversityModel {
         let hasFeedbackSubmitted = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
         print("BOOL: \(hasFeedbackSubmitted)")
         
-        UniversityModel.sharedIntstance.createSavedUniversityArray(savedArray: loadedUniversities)
+        UniversityModel.sharedIntstance.createSavedUniversityArray(loadedUniversities)
         return true
     }
     
@@ -82,7 +82,7 @@ class University    {
     var checked = false
     var timestamp = ""
     
-    func createUniversityFromDict( dict: NSDictionary) -> University {
+    func createUniversityFromDict( _ dict: NSDictionary) -> University {
         
         self.module = dict.value(forKey: "module") as! String
         self.question = dict.value(forKey: "question") as! String
@@ -96,7 +96,7 @@ class University    {
     /**
      This is the swift version of the university creation from a dictionary, with the included optional unpacked for the Bool
      */
-    func createUniversityFromDictSwift( dict: NSDictionary) -> University {
+    func createUniversityFromDictSwift( _ dict: NSDictionary) -> University {
         
         self.module = dict.value(forKey: "module") as! String
         self.question = dict.value(forKey: "question") as! String
@@ -114,7 +114,7 @@ class University    {
     
     
     
-    func plistParser(plistName: String) -> NSArray {
+    func plistParser(_ plistName: String) -> NSArray {
         if let path = Bundle.main.path(forResource: plistName, ofType: "plist") {
             return NSArray.init(contentsOfFile: path)! as NSArray
         } else  {

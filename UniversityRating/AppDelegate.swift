@@ -22,10 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else  {
             UniversityModel.sharedIntstance.createUniversityArray() // this creates all the objects again
         }
-        getDayOfWeek()
+        _ = getDayOfWeek()
         
-//        let day = getDayOfWeek()
-//        print("DAY: \(day)")
+        let day = getDayOfWeek()
+        print("DAY: \(day)")
         
         return true
     }
@@ -60,11 +60,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      - returns: Optional Int
      */
     func getDayOfWeek()->Int? {
-        let weekday = NSCalendar.current.component(.weekday, from: Date())
+        let weekday = Calendar.current.component(.weekday, from: Date())
         switch (weekday) {
-        case 2:
+        case 6:
             print("Monday Found - Reset Scores Process")
-           _ = reset
+            print("Logic: \(UserDefaults.standard.bool(forKey: "feedbackSubmitted"))")
+            if UserDefaults.standard.bool(forKey: "feedbackSubmitted") {
+                //Do nothing
+            } else {
+                _ = reset
+            }
+            
             
         default: print("Not a Weekday we care about: No Reset necessary")
         }
@@ -73,23 +79,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     /**
-     This closure that only runs once to ensure that teh reset mechainc only happens once on the day and only on that day
+     This closure that only runs once to ensure that the reset mechainc only happens once on the day and only on that day
      */
-    private lazy var reset: Void = {
+    fileprivate lazy var reset: Void = {
         // Do this once
         print("Run this method once")
         UniversityModel.sharedIntstance.resetRatingCheckedAndTimestamp()
     }()
     
-    
-    func startOfDate() -> Date {
-        let date = Date()
-        let cal = Calendar(identifier: .gregorian)
-        let midnightDate = cal.startOfDay(for: date)
-        print("\(midnightDate)")
-        
-        return midnightDate
-    }
-
 }
 
