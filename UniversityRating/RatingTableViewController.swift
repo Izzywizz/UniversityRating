@@ -32,6 +32,7 @@ class RatingTableViewController: UITableViewController {
         addListeningObserver()
         hasFeedbackBeenSubmitted = false
         UserDefaults.standard.set(hasFeedbackBeenSubmitted, forKey: "feedbackSubmitted")
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -95,9 +96,10 @@ class RatingTableViewController: UITableViewController {
         if !UserDefaults.standard.bool(forKey: "feedbackSubmitted") && uni.timestamp.isEmpty  {
             print("No timestamp")
             cell.isUserInteractionEnabled = true
+            cell.completedTickImageView.isHidden = true
         } else  {
             print("timeStamp set")
-            cell.innerCard.backgroundColor = UIColor.yellow
+            cell.completedTickImageView.isHidden = false
             cell.isUserInteractionEnabled = false
         }
         

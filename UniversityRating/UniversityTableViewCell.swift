@@ -18,7 +18,9 @@ class UniversityTableViewCell: UITableViewCell {
     @IBOutlet weak var moduleLabel: UILabel!
     var universitObject = University()
 
+    @IBOutlet weak var completedTickImageView: UIImageView!
     @IBOutlet weak var innerCard: UIView!
+    @IBOutlet weak var greenLineView: UIView!
     
     @IBOutlet weak var poorButton: UIButton!
     @IBOutlet weak var notGreatButton: UIButton!

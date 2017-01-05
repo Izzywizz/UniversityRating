@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UniversityModel.sharedIntstance.createUniversityArray() // this creates all the objects again
         }
         
-        let day = getDayOfWeek()
-        print("DAY: \(day)")
+//        let day = getDayOfWeek()
+//        print("DAY: \(day)")
         
         return true
     }

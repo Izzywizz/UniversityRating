@@ -33,14 +33,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Course Feedback" id="M9V-Yf-A5O">
-                        <barButtonItem key="leftBarButtonItem" image="settings" id="5Pk-Rt-Li5">
+                        <barButtonItem key="leftBarButtonItem" image="settings" id="5Pk-Rt-Li5" userLabel="Settings">
                             <connections>
                                 <action selector="settingsButtonPressed:" destination="zkj-Yz-LIQ" id="Uuy-eK-yae"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="e0f-fn-t2a">
-                            <connections>
-                                <action selector="resetButtonPressed:" destination="zkj-Yz-LIQ" id="7jp-ut-iLx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -84,7 +79,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jT9-HS-aZ2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kjd-82-f7c">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kjd-82-f7c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
