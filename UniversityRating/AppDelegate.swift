@@ -12,23 +12,25 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        
-        if savedUniversityDic()
+        if UniversityModel.sharedIntstance.savedUniversityDic()
         {
             print("Items need to be created, off you go savedUniversityDic() ")
         } else  {
             UniversityModel.sharedIntstance.createUniversityArray() // this creates all the objects again
         }
+        getDayOfWeek()
         
 //        let day = getDayOfWeek()
 //        print("DAY: \(day)")
         
         return true
     }
+    
+
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -60,39 +62,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func getDayOfWeek()->Int? {
         let weekday = NSCalendar.current.component(.weekday, from: Date())
         switch (weekday) {
-//        case 2:
-//            print("Monday Found - Reset Scores")
-//            UniversityModel.sharedIntstance.resetRatingCheckedAndTimestamp()
-        case 5:
-            print("Monday Found - Reset Scores")
-            UniversityModel.sharedIntstance.resetRatingCheckedAndTimestamp()
+        case 2:
+            print("Monday Found - Reset Scores Process")
+           _ = reset
             
         default: print("Not a Weekday we care about: No Reset necessary")
         }
         return weekday
     }
     
-    //MARK: Saved Instance Methods
     
     /**
-     Method that checks whether the instance has been saved, by using optionals and guard statements
-     The method returns false if nothing has been saved in the NSUserDefaults then you hop out of the method, if true, 
-     the method calls the sharedInstance method that deals with creating the previously saved
-     - returns: Bool, True - Data has been saved, False - No save data
+     This closure that only runs once to ensure that teh reset mechainc only happens once on the day and only on that day
      */
-    func savedUniversityDic() -> Bool {
+    private lazy var reset: Void = {
+        // Do this once
+        print("Run this method once")
+        UniversityModel.sharedIntstance.resetRatingCheckedAndTimestamp()
+    }()
+    
+    
+    func startOfDate() -> Date {
+        let date = Date()
+        let cal = Calendar(identifier: .gregorian)
+        let midnightDate = cal.startOfDay(for: date)
+        print("\(midnightDate)")
         
-        guard let loadedUniversities = UserDefaults.standard.array(forKey: "myUniversityDic") as? [[String: Any]] else {
-            print("Nothing saved")
-            return false
-        }
-        print("Saved")
-//        print(loadedUniversities)
-        let hasFeedbackSubmitted = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
-        print("BOOL: \(hasFeedbackSubmitted)")
-        
-        UniversityModel.sharedIntstance.createSavedUniversityArray(savedArray: loadedUniversities)
-        return true
+        return midnightDate
     }
+
 }
 

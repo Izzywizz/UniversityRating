@@ -40,6 +40,29 @@ final class UniversityModel {
         }
     }
     
+    //MARK: Saved Instance Methods
+    
+    /**
+     Method that checks whether the instance has been saved, by using optionals and guard statements
+     The method returns false if nothing has been saved in the NSUserDefaults then you hop out of the method, if true,
+     the method calls the sharedInstance method that deals with creating the previously saved
+     - returns: Bool, True - Data has been saved, False - No save data
+     */
+    func savedUniversityDic() -> Bool {
+        
+        guard let loadedUniversities = UserDefaults.standard.array(forKey: "myUniversityDic") as? [[String: Any]] else {
+            print("Nothing saved")
+            return false
+        }
+        print("Saved")
+        //        print(loadedUniversities)
+        let hasFeedbackSubmitted = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
+        print("BOOL: \(hasFeedbackSubmitted)")
+        
+        UniversityModel.sharedIntstance.createSavedUniversityArray(savedArray: loadedUniversities)
+        return true
+    }
+    
     func resetRatingCheckedAndTimestamp() {
         for index in universityArray {
             let university = index as! University
