@@ -10,6 +10,13 @@ import UIKit
 
 struct Time {
     
+    // No stored properrties needed
+    
+    //MARK: Time Manipulation Methods
+    /**
+     A Method that returnns the time for the start of the current day, Monday Midnight for example if it was monday
+     - returns: Date() obj
+     */
     func startOfToday() -> Date {
         let date = Date()
         let cal = Calendar(identifier: .gregorian)
@@ -19,12 +26,26 @@ struct Time {
         return midnightDate
     }
     
-    func daysBetweenDates(startDate: Date, endDate: Date) -> Int {
+    
+    /**
+     Calculates the number of days between two given dates, this method is primarily used to check
+     that the number of days given for feedback exceeds a certain amount in order to facilate the reset mechanic
+     for the feedback every Monday.
+     - returns: Int (number of days)
+     */
+    func numberOfDaysPassedBetween(_ startDate: Date, AndEndDate endDate: Date) -> Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([Calendar.Component.day], from: startDate, to: endDate)
-//        print(components.day!)
+        //        print(components.day!)
         return components.day!
     }
+    
+    /**
+     Loops through the list of available timestamps from the university model and converts the String equivilant of
+     the date into a Date obj in order to be able use it for calculations for the number of days passed since feedback method.
+     If no timestamps have been set then the current date will be returned
+     - returns: Date() obj, converted from a String representation of the universities module timestamp
+     */
     
     func lastSyncedTime() -> Date {
         let currentDate = Date()
@@ -35,9 +56,13 @@ struct Time {
                 return convertStringtoDate(timestamp: university.timestamp)
             }
         }
-        return currentDate
+        return currentDate //default
     }
     
+    /**
+     Converts any String timestamp that is set to the default format found in Date() and returns a Date() obj
+     - returns: Date() obj
+     */
     func convertStringtoDate(timestamp: String) -> Date{
         
         let currentDate = Date()
@@ -49,5 +74,5 @@ struct Time {
         
         return currentDate
     }
-
+    
 }

@@ -104,7 +104,7 @@
 		43015D7A1E09427E0085D3B0 /* UniversityRating */ = {
 			isa = PBXGroup;
 			children = (
-				431D88091E0985D8001735D1 /* Open_Sans */,
+				430C785D1E1FAB640097A021 /* Fonts */,
 				431D87FC1E097574001735D1 /* Model */,
 				431D87FF1E097745001735D1 /* SettingsCell */,
 				431D87F91E096C8C001735D1 /* UniversityCell */,
@@ -118,6 +118,14 @@
 				43015D871E09427E0085D3B0 /* Info.plist */,
 			);
 			path = UniversityRating;
+			sourceTree = "<group>";
+		};
+		430C785D1E1FAB640097A021 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				431D88091E0985D8001735D1 /* Open_Sans */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		431D87F91E096C8C001735D1 /* UniversityCell */ = {

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if UniversityModel.sharedIntstance.savedUniversityDic()
         {
-            print("Items need to be created, off you go savedUniversityDic() ")
+            print("Items need to be created, savedUniversityDic() called")
         } else  {
             UniversityModel.sharedIntstance.createUniversityArray() // this creates all the objects again
         }
@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let time = Time()
         
         switch (weekday) {
-        case 2 where time.daysBetweenDates(startDate: time.lastSyncedTime(), endDate: time.startOfToday()) > 0:
+        case 2 where time.numberOfDaysPassedBetween(time.lastSyncedTime(), AndEndDate: time.startOfToday()) > 0:
             print("Monday Found/ Feedback given must be greater then one day")
             let hasFeedbackBeenRecieved = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
             print("FeedbackSubmitted: \(hasFeedbackBeenRecieved)")
