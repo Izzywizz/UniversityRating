@@ -14,6 +14,7 @@
 		43015D901E09435D0085D3B0 /* RatingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43015D8F1E09435D0085D3B0 /* RatingTableViewController.swift */; };
 		43015D931E0944A60085D3B0 /* UniversityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43015D921E0944A60085D3B0 /* UniversityModel.swift */; };
 		43015D951E094AED0085D3B0 /* University.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43015D941E094AED0085D3B0 /* University.plist */; };
+		430C785C1E1F9D830097A021 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430C785B1E1F9D830097A021 /* Time.swift */; };
 		431D87F81E096C52001735D1 /* University.xib in Resources */ = {isa = PBXBuildFile; fileRef = 431D87F71E096C52001735D1 /* University.xib */; };
 		431D87FB1E096CAE001735D1 /* UniversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D87FA1E096CAE001735D1 /* UniversityTableViewCell.swift */; };
 		431D87FE1E097622001735D1 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D87FD1E097622001735D1 /* SettingTableViewController.swift */; };
@@ -48,6 +49,7 @@
 		43015D8F1E09435D0085D3B0 /* RatingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingTableViewController.swift; sourceTree = "<group>"; };
 		43015D921E0944A60085D3B0 /* UniversityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
 		43015D941E094AED0085D3B0 /* University.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = University.plist; sourceTree = "<group>"; };
+		430C785B1E1F9D830097A021 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		431D87F71E096C52001735D1 /* University.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = University.xib; path = ../University.xib; sourceTree = "<group>"; };
 		431D87FA1E096CAE001735D1 /* UniversityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityTableViewCell.swift; sourceTree = "<group>"; };
 		431D87FD1E097622001735D1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingTableViewController.swift; path = ../SettingTableViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		43015D6F1E09427E0085D3B0 = {
 			isa = PBXGroup;
 			children = (
+				430C785B1E1F9D830097A021 /* Time.swift */,
 				43015D7A1E09427E0085D3B0 /* UniversityRating */,
 				43015D791E09427E0085D3B0 /* Products */,
 			);
@@ -261,6 +264,7 @@
 			files = (
 				43015D901E09435D0085D3B0 /* RatingTableViewController.swift in Sources */,
 				4325A6F01E0C1C7C00A2DE39 /* UniversityFooterTableViewCell.swift in Sources */,
+				430C785C1E1F9D830097A021 /* Time.swift in Sources */,
 				43015D7C1E09427E0085D3B0 /* AppDelegate.swift in Sources */,
 				431D88031E09787D001735D1 /* SettingsTableViewCell.swift in Sources */,
 				43015D931E0944A60085D3B0 /* UniversityModel.swift in Sources */,

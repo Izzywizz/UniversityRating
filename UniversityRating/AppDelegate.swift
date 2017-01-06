@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -27,10 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let day = getDayOfWeek()
         print("DAY: \(day)")
         
+        lastSyncedTime()
         return true
     }
     
-
+    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -61,16 +62,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      */
     func getDayOfWeek()->Int? {
         let weekday = Calendar.current.component(.weekday, from: Date())
+
         switch (weekday) {
-        case 6:
-            print("Monday Found - Reset Scores Process")
-            print("Logic: \(UserDefaults.standard.bool(forKey: "feedbackSubmitted"))")
-            if UserDefaults.standard.bool(forKey: "feedbackSubmitted") {
-                //Do nothing
-            } else {
+        case 2 where daysBetweenDates(startDate: lastSyncedTime(), endDate: startOfToday()) >= 0:
+            print("Monday Found")
+            let hasFeedbackBeenRecieved = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
+            print("FeedbackSubmitted: \(hasFeedbackBeenRecieved)")
+            
+            if hasFeedbackBeenRecieved {
+                print("RESET")
                 _ = reset
             }
-            
             
         default: print("Not a Weekday we care about: No Reset necessary")
         }
@@ -87,5 +89,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UniversityModel.sharedIntstance.resetRatingCheckedAndTimestamp()
     }()
     
+    func startOfToday() -> Date {
+        let date = Date()
+        let cal = Calendar(identifier: .gregorian)
+        let midnightDate = cal.startOfDay(for: date)
+        //        print("\(midnightDate)")
+        
+        return midnightDate
+    }
+    
+    func daysBetweenDates(startDate: Date, endDate: Date) -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([Calendar.Component.day], from: startDate, to: endDate)
+        print(components.day!)
+        return components.day!
+    }
+    
+    func lastSyncedTime() -> Date {
+        for index in UniversityModel.sharedIntstance.universityArray {
+            let university = index as! University
+            if !university.timestamp.isEmpty {
+                return convertStringtoDate(timestamp: university.timestamp)
+            }
+        }
+        return Date() //return cuurent date
+    }
+    
+    func convertStringtoDate(timestamp: String) -> Date{
+        let strDate = timestamp
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ssZZZZ"
+        if let date = dateFormatter.date(from:strDate)  {
+            return date
+        }
+        
+        return Date() //current dtae
+    }
 }
 
