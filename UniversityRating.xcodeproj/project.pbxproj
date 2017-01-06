@@ -49,7 +49,7 @@
 		43015D8F1E09435D0085D3B0 /* RatingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingTableViewController.swift; sourceTree = "<group>"; };
 		43015D921E0944A60085D3B0 /* UniversityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
 		43015D941E094AED0085D3B0 /* University.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = University.plist; sourceTree = "<group>"; };
-		430C785B1E1F9D830097A021 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		430C785B1E1F9D830097A021 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Time.swift; path = ../Time.swift; sourceTree = "<group>"; };
 		431D87F71E096C52001735D1 /* University.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = University.xib; path = ../University.xib; sourceTree = "<group>"; };
 		431D87FA1E096CAE001735D1 /* UniversityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityTableViewCell.swift; sourceTree = "<group>"; };
 		431D87FD1E097622001735D1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingTableViewController.swift; path = ../SettingTableViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +88,6 @@
 		43015D6F1E09427E0085D3B0 = {
 			isa = PBXGroup;
 			children = (
-				430C785B1E1F9D830097A021 /* Time.swift */,
 				43015D7A1E09427E0085D3B0 /* UniversityRating */,
 				43015D791E09427E0085D3B0 /* Products */,
 			);
@@ -112,6 +111,7 @@
 				43015D7B1E09427E0085D3B0 /* AppDelegate.swift */,
 				43015D8F1E09435D0085D3B0 /* RatingTableViewController.swift */,
 				431D87FD1E097622001735D1 /* SettingTableViewController.swift */,
+				430C785B1E1F9D830097A021 /* Time.swift */,
 				43015D7F1E09427E0085D3B0 /* Main.storyboard */,
 				43015D821E09427E0085D3B0 /* Assets.xcassets */,
 				43015D841E09427E0085D3B0 /* LaunchScreen.storyboard */,

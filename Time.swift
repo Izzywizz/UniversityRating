@@ -22,29 +22,32 @@ struct Time {
     func daysBetweenDates(startDate: Date, endDate: Date) -> Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([Calendar.Component.day], from: startDate, to: endDate)
-        print(components.day!)
+//        print(components.day!)
         return components.day!
     }
     
     func lastSyncedTime() -> Date {
+        let currentDate = Date()
+        
         for index in UniversityModel.sharedIntstance.universityArray {
             let university = index as! University
             if !university.timestamp.isEmpty {
                 return convertStringtoDate(timestamp: university.timestamp)
             }
         }
-        return Date() //return cuurent date
+        return currentDate
     }
     
     func convertStringtoDate(timestamp: String) -> Date{
-        let strDate = timestamp
+        
+        let currentDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ssZZZZ"
-        if let date = dateFormatter.date(from:strDate)  {
-            return date
+        if let timestampDate = dateFormatter.date(from:timestamp)  {
+            return timestampDate
         }
         
-        return Date() //current dtae
+        return currentDate
     }
 
 }
