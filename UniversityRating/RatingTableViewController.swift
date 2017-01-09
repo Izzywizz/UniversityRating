@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Flurry_iOS_SDK
 
 class RatingTableViewController: UITableViewController {
     
@@ -19,7 +20,6 @@ class RatingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Table View loaded")
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -107,6 +107,17 @@ class RatingTableViewController: UITableViewController {
         self.tableView.register(UINib.init(nibName: "UniversityFooter", bundle: nil), forCellReuseIdentifier: "universityFooterCell")
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "universityFooterCell") as! UniversityFooterTableViewCell
         
+        if UserDefaults.standard.bool(forKey: "feedbackSubmitted") {
+            cell.submitButton.setTitle("FEEDBACK SUBMITTED", for: .normal)
+            cell.submitButton.alpha = 0.5
+            cell.isUserInteractionEnabled = false
+
+        } else  {
+            cell.submitButton.setTitle("SUBMIT ALL MODULES", for: .normal)
+            cell.submitButton.alpha = 1
+            cell.isUserInteractionEnabled = true
+
+        }
         return  cell
         
     }
@@ -126,6 +137,9 @@ class RatingTableViewController: UITableViewController {
     //MARK: Object Persistence
     func saveStateOf(_ university: University) {
         universityDic.append(["module": "\(university.module)", "question": "\(university.question)", "rating": "\(university.rating)", "checked": "\(university.checked)", "submitted": "\(university.timestamp)"])
+        
+        let flurryDic = ["module": "\(university.module)", "question": "\(university.question)", "rating": "\(university.rating)", "checked": "\(university.checked)", "submitted": "\(university.timestamp)"]
+        Flurry.logEvent("moduleQuestionRatingCheckSubmitted", withParameters: flurryDic)
     }
     
     

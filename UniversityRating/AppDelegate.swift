@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Flurry_iOS_SDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        Flurry.setLogLevel(FlurryLogLevelAll)
+        Flurry.startSession("N46H6KFRKX2P4TCMTRBB");
+
         if UniversityModel.sharedIntstance.savedUniversityDic()
         {
             print("Items need to be created, savedUniversityDic() called")

@@ -37,22 +37,23 @@
 		4325A6E81E0BD6A100A2DE39 /* SettingsFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4325A6E71E0BD6A100A2DE39 /* SettingsFooterTableViewCell.swift */; };
 		4325A6EE1E0C1C1B00A2DE39 /* UniversityFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4325A6ED1E0C1C1B00A2DE39 /* UniversityFooter.xib */; };
 		4325A6F01E0C1C7C00A2DE39 /* UniversityFooterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4325A6EF1E0C1C7C00A2DE39 /* UniversityFooterTableViewCell.swift */; };
+		B1618887282BC3CC098538D4 /* Pods_UniversityRating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C7D24177BCDC089A6327368 /* Pods_UniversityRating.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		43015D781E09427E0085D3B0 /* UniversityRating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversityRating.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		43015D7B1E09427E0085D3B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		43015D7B1E09427E0085D3B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = UniversityRating/AppDelegate.swift; sourceTree = "<group>"; };
 		43015D801E09427E0085D3B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		43015D821E09427E0085D3B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43015D821E09427E0085D3B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = UniversityRating/Assets.xcassets; sourceTree = "<group>"; };
 		43015D851E09427E0085D3B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		43015D871E09427E0085D3B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43015D8F1E09435D0085D3B0 /* RatingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingTableViewController.swift; sourceTree = "<group>"; };
+		43015D871E09427E0085D3B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = UniversityRating/Info.plist; sourceTree = "<group>"; };
+		43015D8F1E09435D0085D3B0 /* RatingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingTableViewController.swift; path = UniversityRating/RatingTableViewController.swift; sourceTree = "<group>"; };
 		43015D921E0944A60085D3B0 /* UniversityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityModel.swift; sourceTree = "<group>"; };
 		43015D941E094AED0085D3B0 /* University.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = University.plist; sourceTree = "<group>"; };
-		430C785B1E1F9D830097A021 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Time.swift; path = ../Time.swift; sourceTree = "<group>"; };
+		430C785B1E1F9D830097A021 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		431D87F71E096C52001735D1 /* University.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = University.xib; path = ../University.xib; sourceTree = "<group>"; };
 		431D87FA1E096CAE001735D1 /* UniversityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityTableViewCell.swift; sourceTree = "<group>"; };
-		431D87FD1E097622001735D1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingTableViewController.swift; path = ../SettingTableViewController.swift; sourceTree = "<group>"; };
+		431D87FD1E097622001735D1 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		431D88001E0977A7001735D1 /* Settings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Settings.xib; sourceTree = "<group>"; };
 		431D88021E09787D001735D1 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		431D88061E098505001735D1 /* SettingsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsHeader.xib; sourceTree = "<group>"; };
@@ -72,6 +73,9 @@
 		4325A6E71E0BD6A100A2DE39 /* SettingsFooterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsFooterTableViewCell.swift; sourceTree = "<group>"; };
 		4325A6ED1E0C1C1B00A2DE39 /* UniversityFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UniversityFooter.xib; sourceTree = "<group>"; };
 		4325A6EF1E0C1C7C00A2DE39 /* UniversityFooterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityFooterTableViewCell.swift; sourceTree = "<group>"; };
+		7C7D24177BCDC089A6327368 /* Pods_UniversityRating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UniversityRating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CDB14CA15663D11661C26E8 /* Pods-UniversityRating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniversityRating.release.xcconfig"; path = "Pods/Target Support Files/Pods-UniversityRating/Pods-UniversityRating.release.xcconfig"; sourceTree = "<group>"; };
+		F8C44D6EB46806D11FD56C87 /* Pods-UniversityRating.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniversityRating.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UniversityRating/Pods-UniversityRating.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,29 +83,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1618887282BC3CC098538D4 /* Pods_UniversityRating.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BEFB60A27B35DDBBE34304F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F8C44D6EB46806D11FD56C87 /* Pods-UniversityRating.debug.xcconfig */,
+				7CDB14CA15663D11661C26E8 /* Pods-UniversityRating.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		43015D6F1E09427E0085D3B0 = {
-			isa = PBXGroup;
-			children = (
-				43015D7A1E09427E0085D3B0 /* UniversityRating */,
-				43015D791E09427E0085D3B0 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		43015D791E09427E0085D3B0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				43015D781E09427E0085D3B0 /* UniversityRating.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		43015D7A1E09427E0085D3B0 /* UniversityRating */ = {
 			isa = PBXGroup;
 			children = (
 				430C785D1E1FAB640097A021 /* Fonts */,
@@ -116,8 +114,18 @@
 				43015D821E09427E0085D3B0 /* Assets.xcassets */,
 				43015D841E09427E0085D3B0 /* LaunchScreen.storyboard */,
 				43015D871E09427E0085D3B0 /* Info.plist */,
+				43015D791E09427E0085D3B0 /* Products */,
+				1BEFB60A27B35DDBBE34304F /* Pods */,
+				B024F95ACC524630A5307D3D /* Frameworks */,
 			);
-			path = UniversityRating;
+			sourceTree = "<group>";
+		};
+		43015D791E09427E0085D3B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43015D781E09427E0085D3B0 /* UniversityRating.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		430C785D1E1FAB640097A021 /* Fonts */ = {
@@ -126,6 +134,7 @@
 				431D88091E0985D8001735D1 /* Open_Sans */,
 			);
 			name = Fonts;
+			path = UniversityRating;
 			sourceTree = "<group>";
 		};
 		431D87F91E096C8C001735D1 /* UniversityCell */ = {
@@ -137,6 +146,7 @@
 				4325A6EF1E0C1C7C00A2DE39 /* UniversityFooterTableViewCell.swift */,
 			);
 			name = UniversityCell;
+			path = UniversityRating;
 			sourceTree = "<group>";
 		};
 		431D87FC1E097574001735D1 /* Model */ = {
@@ -146,6 +156,7 @@
 				43015D921E0944A60085D3B0 /* UniversityModel.swift */,
 			);
 			name = Model;
+			path = UniversityRating;
 			sourceTree = "<group>";
 		};
 		431D87FF1E097745001735D1 /* SettingsCell */ = {
@@ -159,6 +170,7 @@
 				4325A6E71E0BD6A100A2DE39 /* SettingsFooterTableViewCell.swift */,
 			);
 			name = SettingsCell;
+			path = UniversityRating;
 			sourceTree = "<group>";
 		};
 		431D88091E0985D8001735D1 /* Open_Sans */ = {
@@ -179,6 +191,14 @@
 			path = Open_Sans;
 			sourceTree = "<group>";
 		};
+		B024F95ACC524630A5307D3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C7D24177BCDC089A6327368 /* Pods_UniversityRating.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,9 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43015D8A1E09427E0085D3B0 /* Build configuration list for PBXNativeTarget "UniversityRating" */;
 			buildPhases = (
+				6B1A1FD08E6286FEC10202ED /* [CP] Check Pods Manifest.lock */,
 				43015D741E09427E0085D3B0 /* Sources */,
 				43015D751E09427E0085D3B0 /* Frameworks */,
 				43015D761E09427E0085D3B0 /* Resources */,
+				CC947526013A4AA2F8CD5689 /* [CP] Embed Pods Frameworks */,
+				2490015B8E222E0D10913394 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,6 +288,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2490015B8E222E0D10913394 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UniversityRating/Pods-UniversityRating-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B1A1FD08E6286FEC10202ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CC947526013A4AA2F8CD5689 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UniversityRating/Pods-UniversityRating-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		43015D741E09427E0085D3B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -292,6 +363,7 @@
 				43015D801E09427E0085D3B0 /* Base */,
 			);
 			name = Main.storyboard;
+			path = UniversityRating;
 			sourceTree = "<group>";
 		};
 		43015D841E09427E0085D3B0 /* LaunchScreen.storyboard */ = {
@@ -300,6 +372,7 @@
 				43015D851E09427E0085D3B0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = UniversityRating;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -400,6 +473,7 @@
 		};
 		43015D8B1E09427E0085D3B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8C44D6EB46806D11FD56C87 /* Pods-UniversityRating.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6HA878TP6G;
@@ -413,6 +487,7 @@
 		};
 		43015D8C1E09427E0085D3B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CDB14CA15663D11661C26E8 /* Pods-UniversityRating.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6HA878TP6G;
