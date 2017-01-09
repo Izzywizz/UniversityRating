@@ -36,7 +36,7 @@ struct Time {
     func numberOfDaysPassedBetween(_ startDate: Date, AndEndDate endDate: Date) -> Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([Calendar.Component.day], from: startDate, to: endDate)
-        //        print(components.day!)
+                print(components.day!)
         return components.day!
     }
     

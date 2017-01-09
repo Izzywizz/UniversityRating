@@ -160,8 +160,7 @@ class RatingTableViewController: UITableViewController {
         }
         
         
-        let hasFeedbackBeenSubmitted = true
-        UserDefaults.standard.set(hasFeedbackBeenSubmitted, forKey: "feedbackSubmitted")
+        UserDefaults.standard.set(true, forKey: "feedbackSubmitted")
         UserDefaults.standard.set(universityDic, forKey: "myUniversityDic")
         tableView.reloadData()
         self.tableView.isUserInteractionEnabled = false
@@ -177,8 +176,8 @@ class RatingTableViewController: UITableViewController {
     
     //MARK: Action Methods
     @IBAction func settingsButtonPressed(_ sender: UIBarButtonItem) {
-        let hasFeedbackBeenSubmitted = false
-        UserDefaults.standard.set(hasFeedbackBeenSubmitted, forKey: "feedbackSubmitted")
+//        let hasFeedbackBeenSubmitted = false
+//        UserDefaults.standard.set(hasFeedbackBeenSubmitted, forKey: "feedbackSubmitted")
         _ = self.navigationController?.popViewController(animated: true)
     }
     

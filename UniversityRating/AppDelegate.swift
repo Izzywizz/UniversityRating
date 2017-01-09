@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let time = Time()
         
         switch (weekday) {
-        case 2 where time.numberOfDaysPassedBetween(time.lastSyncedTime(), AndEndDate: time.startOfToday()) > 1:
+        case 3 where time.numberOfDaysPassedBetween(time.lastSyncedTime(), AndEndDate: time.startOfToday()) >= 0:
             print("Monday Found/ Feedback given must be greater then one day")
             let hasFeedbackBeenRecieved = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
             print("FeedbackSubmitted: \(hasFeedbackBeenRecieved)")
