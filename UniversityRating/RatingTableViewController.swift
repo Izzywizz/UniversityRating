@@ -145,9 +145,11 @@ class RatingTableViewController: UITableViewController {
             print("TimeStamp: \(university.timestamp)")
         }
         
+        
         let hasFeedbackBeenSubmitted = true
         UserDefaults.standard.set(hasFeedbackBeenSubmitted, forKey: "feedbackSubmitted")
         UserDefaults.standard.set(universityDic, forKey: "myUniversityDic")
+        tableView.reloadData()
         self.tableView.isUserInteractionEnabled = false
     }
     

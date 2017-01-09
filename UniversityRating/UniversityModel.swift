@@ -64,14 +64,14 @@ final class UniversityModel {
     }
     
     
-    func resetRatingCheckedAndTimestamp() {
-        for index in universityArray {
-            let university = index as! University
-            university.rating = ""
-            university.checked = false
-            university.timestamp = ""
-        }
-    }
+//    func resetRatingCheckedAndTimestamp() {
+//        for index in universityArray {
+//            let university = index as! University
+//            university.rating = ""
+//            university.checked = false
+//            university.timestamp = ""
+//        }
+//    }
     
     func iterateThroughTimestamps() {
         for index in universityArray {

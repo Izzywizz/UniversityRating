@@ -65,17 +65,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let time = Time()
         
         switch (weekday) {
-        case 2 where time.numberOfDaysPassedBetween(time.lastSyncedTime(), AndEndDate: time.startOfToday()) > 0:
+        case 2 where time.numberOfDaysPassedBetween(time.lastSyncedTime(), AndEndDate: time.startOfToday()) > 1:
             print("Monday Found/ Feedback given must be greater then one day")
             let hasFeedbackBeenRecieved = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
             print("FeedbackSubmitted: \(hasFeedbackBeenRecieved)")
             
             if hasFeedbackBeenRecieved {
-                print("RESET")
                 _ = reset
             }
             
-        default: print("Not a Weekday we care about: No Reset necessary")
+        default:
+//            print("Not a Weekday we care about: No Reset necessary")
+            break
         }
         return weekday
     }
@@ -86,8 +87,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      */
     fileprivate lazy var reset: Void = {
         // Do this once
-        print("Run this method once")
-        UniversityModel.sharedIntstance.resetRatingCheckedAndTimestamp()
+        print("Run this method once: RESET")
+        UserDefaults.standard.set(false, forKey: "feedbackSubmitted")
+        UniversityModel.sharedIntstance.universityArray.removeAllObjects()
+        UniversityModel.sharedIntstance.createUniversityArray()
     }()
     
 }
