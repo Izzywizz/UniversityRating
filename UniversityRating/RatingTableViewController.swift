@@ -138,7 +138,7 @@ class RatingTableViewController: UITableViewController {
     func saveStateOf(_ university: University) {
         universityDic.append(["module": "\(university.module)", "question": "\(university.question)", "rating": "\(university.rating)", "checked": "\(university.checked)", "submitted": "\(university.timestamp)"])
         
-        let flurryDic = ["module": "\(university.module)", "question": "\(university.question)", "rating": "\(university.rating)", "checked": "\(university.checked)", "submitted": "\(university.timestamp)"]
+        let flurryDic = ["module": "\(university.module)", "rating": "\(university.rating)", "submitted": "\(university.timestamp)"]
         Flurry.logEvent("moduleQuestionRatingCheckSubmitted", withParameters: flurryDic)
     }
     
