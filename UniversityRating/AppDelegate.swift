@@ -29,10 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         _ = getDayOfWeek()
         
-        if let day = getDayOfWeek() {
-            print("DAY: \(day)")
-        }
-        
         return true
     }
     
@@ -56,7 +52,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-       
+        let hasFeedbackBeenRecieved = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
+
+        if hasFeedbackBeenRecieved {
+            _ = getDayOfWeek()
+        }
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
@@ -73,13 +73,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let time = Time()
         
         switch (weekday) {
-        case 3 where time.numberOfDaysPassedBetween(time.lastSyncedTime(), AndEndDate: time.startOfToday()) >= 0:
+        case 2 where time.numberOfDaysPassedBetween(time.lastSyncedTime(), AndEndDate: time.startOfToday()) > 0:
             print("Monday Found/ Feedback given must be greater then one day")
             let hasFeedbackBeenRecieved = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
             print("FeedbackSubmitted: \(hasFeedbackBeenRecieved)")
             
             if hasFeedbackBeenRecieved {
-                _ = reset
+                print("In here!")
+                reset()
             }
             
         default:
@@ -93,13 +94,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /**
      This closure that only runs once to ensure that the reset mechainc only happens once on the day and only on that day
      */
-    fileprivate lazy var reset: Void = {
-        // Do this once
-        print("Run this method once: RESET")
+    
+    func reset() {
         UserDefaults.standard.set(false, forKey: "feedbackSubmitted")
         UniversityModel.sharedIntstance.universityArray.removeAllObjects()
         UniversityModel.sharedIntstance.createUniversityArray()
-    }()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+    }
+    
     
 }
 

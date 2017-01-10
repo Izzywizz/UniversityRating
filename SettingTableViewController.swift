@@ -35,6 +35,8 @@ class SettingTableViewController: UITableViewController {
     override func viewDidDisappear(_ animated: Bool) {
         //remove observer!
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "moduleSelected"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "load"), object: nil)
+
     }
     
     
@@ -47,6 +49,7 @@ class SettingTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
         tableView.register(UINib(nibName: "SettingsHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "settingsHeaderCell")
+        tableView.reloadData()
     }
     
     
@@ -59,11 +62,19 @@ class SettingTableViewController: UITableViewController {
         //        self.present(ratingVC, animated:true, completion:nil)
     }
     
+    func reloadAllSettingsData() {
+        tableView.reloadData()
+    }
+    
     func addListeningObserver() {
         // Define identifier
-        let notificationName = Notification.Name("moduleSelected")
+        let moveToRatingsTable = Notification.Name("moduleSelected")
+        let reload = Notification.Name("load")
+
         // Register to receive notification
-        NotificationCenter.default.addObserver(self, selector: #selector(SettingTableViewController.moveToRatingTableView), name: notificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingTableViewController.moveToRatingTableView), name: moveToRatingsTable, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingTableViewController.reloadAllSettingsData), name: reload, object: nil)
+
     }
     
     
