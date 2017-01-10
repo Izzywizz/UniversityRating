@@ -13,7 +13,8 @@ import Flurry_iOS_SDK
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+    let time = Time()
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -27,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else  {
             UniversityModel.sharedIntstance.createUniversityArray() // this creates all the objects again
         }
-        _ = getDayOfWeek()
+        let _ = time.getDayOfWeek()
         
         return true
     }
@@ -55,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let hasFeedbackBeenRecieved = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
 
         if hasFeedbackBeenRecieved {
-            _ = getDayOfWeek()
+            let _ = time.getDayOfWeek()
         }
     }
     
@@ -63,44 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    //MARK: Reset Methods
-    /**
-     Method that returns the day of the week as an optional Int, sunday = 1 ... satruday = 7
-     - returns: Optional Int
-     */
-    func getDayOfWeek()->Int? {
-        let weekday = Calendar.current.component(.weekday, from: Date())
-        let time = Time()
-        
-        switch (weekday) {
-        case 2 where time.numberOfDaysPassedBetween(time.lastSyncedTime(), AndEndDate: time.startOfToday()) > 0:
-            print("Monday Found/ Feedback given must be greater then one day")
-            let hasFeedbackBeenRecieved = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
-            print("FeedbackSubmitted: \(hasFeedbackBeenRecieved)")
-            
-            if hasFeedbackBeenRecieved {
-                print("In here!")
-                reset()
-            }
-            
-        default:
-//            print("Not a Weekday we care about: No Reset necessary")
-            break
-        }
-        return weekday
-    }
-    
-    
-    /**
-     This closure that only runs once to ensure that the reset mechainc only happens once on the day and only on that day
-     */
-    
-    func reset() {
-        UserDefaults.standard.set(false, forKey: "feedbackSubmitted")
-        UniversityModel.sharedIntstance.universityArray.removeAllObjects()
-        UniversityModel.sharedIntstance.createUniversityArray()
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
-    }
+
     
     
 }

@@ -75,4 +75,33 @@ struct Time {
         return currentDate
     }
     
+    //MARK: Reset Methods
+    /**
+     Method that returns the day of the week as an optional Int, sunday = 1 ... satruday = 7
+     - returns: Optional Int 
+     */
+    func getDayOfWeek()->Int? {
+        let weekday = Calendar.current.component(.weekday, from: Date())
+        
+        switch (weekday) {
+        case 2 where numberOfDaysPassedBetween(lastSyncedTime(), AndEndDate: startOfToday()) > 0:
+            print("Monday Found/ Feedback given must be greater then one day")
+            let hasFeedbackBeenRecieved = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
+            print("FeedbackSubmitted: \(hasFeedbackBeenRecieved)")
+            
+            if hasFeedbackBeenRecieved {
+                print("In here!")
+                UniversityModel.sharedIntstance.reset()
+            }
+            
+        default:
+            //            print("Not a Weekday we care about: No Reset necessary")
+            break
+        }
+        return weekday
+    }
+    
+    
+
+    
 }

@@ -64,14 +64,16 @@ final class UniversityModel {
     }
     
     
-//    func resetRatingCheckedAndTimestamp() {
-//        for index in universityArray {
-//            let university = index as! University
-//            university.rating = ""
-//            university.checked = false
-//            university.timestamp = ""
-//        }
-//    }
+    /**
+     This ensures that the reset mechainc only happens once on the specifc day
+     */
+    
+    func reset() {
+        UserDefaults.standard.set(false, forKey: "feedbackSubmitted")
+        UniversityModel.sharedIntstance.universityArray.removeAllObjects()
+        UniversityModel.sharedIntstance.createUniversityArray()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+    }
     
     func iterateThroughTimestamps() {
         for index in universityArray {
