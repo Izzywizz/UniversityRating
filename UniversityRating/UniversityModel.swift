@@ -21,11 +21,11 @@ final class UniversityModel {
     var universityArray = NSMutableArray()
     
     func createUniversityArray() {
-        for array in University().plistParser("University") {
-            let uni: University = University().createUniversityFromDict(array as! NSDictionary)
+        for index in University().plistParser("University") {
+            let uni: University = University().createUniversityFromDict(index as! [String : Any])
             universityArray.add(uni)
-            //            print("Module: \(uni.module), question: \(uni.question) rating: \(uni.rating) checked: \(uni.checked)")
-            //            print("Array Count: \(universityArray.count)")
+//                        print("Module: \(uni.module), question: \(uni.question) rating: \(uni.rating) checked: \(uni.checked)")
+//                        print("Array Count: \(universityArray.count)")
         }
 
     }
@@ -33,7 +33,7 @@ final class UniversityModel {
     func createSavedUniversityArray(_ savedArray: [[String: Any]]) {
         for index in savedArray {
             //            print("TEST: \(index)")
-            let uni: University = University().createUniversityFromDictSwift(index as NSDictionary)
+            let uni: University = University().createUniversityFromDictSwift(index)
             //            print("TEST: \(uni.module)")
             universityArray.add(uni)
             
@@ -92,13 +92,13 @@ class University    {
     var checked = false
     var timestamp = ""
     
-    func createUniversityFromDict( _ dict: NSDictionary) -> University {
+    func createUniversityFromDict( _ dict: [String: Any]) -> University {
         
-        self.module = dict.value(forKey: "module") as! String
-        self.question = dict.value(forKey: "question") as! String
-        self.rating = dict.value(forKey: "rating") as! String
-        self.checked = dict.value(forKey: "checked") as! Bool
-        self.timestamp = dict.value(forKey: "submitted") as! String
+        self.module = dict["module"] as! String
+        self.question = dict["question"] as! String
+        self.rating = dict["rating"] as! String
+        self.checked = dict["checked"] as! Bool
+        self.timestamp = dict["submitted"] as! String
         
         return self
     }
@@ -106,17 +106,18 @@ class University    {
     /**
      This is the swift version of the university creation from a dictionary, with the included optional unpacked for the Bool
      */
-    func createUniversityFromDictSwift( _ dict: NSDictionary) -> University {
+    func createUniversityFromDictSwift( _ dict: [String : Any]) -> University {
         
-        self.module = dict.value(forKey: "module") as! String
-        self.question = dict.value(forKey: "question") as! String
-        self.rating = dict.value(forKey: "rating") as! String
+        self.module = dict["module"] as! String
+        self.question = dict["question"] as! String
+        self.rating = dict["rating"] as! String
         
-        if let checked = dict.value(forKey: "checked") {
+        if let checked = dict["checked"] {
             self.checked = Bool (checked as! String)!
         }
         
-        self.timestamp = dict.value(forKey: "submitted") as! String
+        self.timestamp = dict["submitted"] as! String
+        
 
         
         return self

@@ -83,8 +83,10 @@ struct Time {
     func getDayOfWeek()->Int? {
         let weekday = Calendar.current.component(.weekday, from: Date())
         
-        switch (weekday) {
-        case 2 where numberOfDaysPassedBetween(lastSyncedTime(), AndEndDate: startOfToday()) > 0:
+        let day = Day(rawValue: weekday)!
+        
+        switch (day) {
+        case .friday where numberOfDaysPassedBetween(lastSyncedTime(), AndEndDate: startOfToday()) >= 0:
             print("Monday Found/ Feedback given must be greater then one day")
             let hasFeedbackBeenRecieved = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
             print("FeedbackSubmitted: \(hasFeedbackBeenRecieved)")
@@ -99,6 +101,10 @@ struct Time {
             break
         }
         return weekday
+    }
+    
+    enum Day: Int {
+        case sunday = 1, monday, tuesday, wednesday, thrusday, friday, saturday
     }
     
     
