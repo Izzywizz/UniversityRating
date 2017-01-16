@@ -22,12 +22,10 @@ final class UniversityModel {
     
     func createUniversityArray() {
         for index in University().plistParser("University") {
-            let uni: University = University().createUniversityFromDict(index as! [String : Any])
+            let uni: University = University().createUniversityFromDict(index)
             universityArray.add(uni)
-//                        print("Module: \(uni.module), question: \(uni.question) rating: \(uni.rating) checked: \(uni.checked)")
-//                        print("Array Count: \(universityArray.count)")
         }
-
+        
     }
     
     func createSavedUniversityArray(_ savedArray: [[String: Any]]) {
@@ -48,6 +46,7 @@ final class UniversityModel {
      the method calls the sharedInstance method that deals with creating the previously saved
      - returns: Bool, True - Data has been saved, False - No save data
      */
+    
     func savedUniversityDic() -> Bool {
         
         guard let loadedUniversities = UserDefaults.standard.array(forKey: "myUniversityDic") as? [[String: Any]] else {
@@ -118,20 +117,25 @@ class University    {
         
         self.timestamp = dict["submitted"] as! String
         
-
+        
         
         return self
     }
     
     
     
-    func plistParser(_ plistName: String) -> NSArray {
-        if let path = Bundle.main.path(forResource: plistName, ofType: "plist") {
-            return NSArray.init(contentsOfFile: path)! as NSArray
-        } else  {
-            print("Error")
-            return []
+    func plistParser(_ plistName: String) -> [[String : Any]] {
+        
+        if let fileUrl = Bundle.main.url(forResource: plistName, withExtension: "plist"),
+            let data = try? Data(contentsOf: fileUrl) {
+            if let result = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [[String: Any]] { // [String: Any] which ever it is
+                print(result!)
+                return result!
+            }
+            
         }
+
+        return []
     }
     
 }

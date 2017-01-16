@@ -19,7 +19,6 @@ class RatingTableViewController: UITableViewController {
     //MARK: UI Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Table View loaded")
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,7 +70,7 @@ class RatingTableViewController: UITableViewController {
     
     //MARK: Height Cell
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let uni = universityArray.object(at: indexPath.row) as! University
+        let uni = universityArray[indexPath.row] as! University
         if uni.checked == true {
             return 160.0
         } else {
@@ -85,7 +84,7 @@ class RatingTableViewController: UITableViewController {
         
         self.tableView.register(UINib.init(nibName: "University", bundle: nil), forCellReuseIdentifier: "universityCell")
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "universityCell", for: indexPath) as! UniversityTableViewCell
-        let uni = universityArray.object(at: indexPath.row) as! University
+        let uni = universityArray[indexPath.row] as! University
         cell.universitObject = uni
         cell.configureCell()
         
