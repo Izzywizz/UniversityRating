@@ -69,8 +69,13 @@ final class UniversityModel {
     
     func reset() {
         UserDefaults.standard.set(false, forKey: "feedbackSubmitted")
-        UniversityModel.sharedIntstance.universityArray.removeAllObjects()
-        UniversityModel.sharedIntstance.createUniversityArray()
+//        UniversityModel.sharedIntstance.universityArray.removeAllObjects()
+//        UniversityModel.sharedIntstance.createUniversityArray()
+        for index in universityArray {
+            let university = index as! University
+            university.rating = ""
+            university.timestamp = ""
+        }
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
@@ -116,8 +121,7 @@ class University    {
         }
         
         self.timestamp = dict["submitted"] as! String
-        
-        
+    
         
         return self
     }

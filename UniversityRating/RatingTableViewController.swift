@@ -33,6 +33,7 @@ class RatingTableViewController: UITableViewController {
     override func viewDidDisappear(_ animated: Bool) {
         //remove observer!
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "submitCourseFeedback"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
     
@@ -137,6 +138,7 @@ class RatingTableViewController: UITableViewController {
     func saveStateOf(_ university: University) {
         universityDic.append(["module": "\(university.module)", "question": "\(university.question)", "rating": "\(university.rating)", "checked": "\(university.checked)", "submitted": "\(university.timestamp)"])
         
+        //Added flurry saving/pushing, it logs the module as the parameter name so it groups all the results
         let flurryDic = ["module": "\(university.module)", "rating": "\(university.rating)", "submitted": "\(university.timestamp)"]
         Flurry.logEvent("\(university.module)", withParameters: flurryDic)
     }
@@ -158,18 +160,28 @@ class RatingTableViewController: UITableViewController {
             print("TimeStamp: \(university.timestamp)")
         }
         
-        
         UserDefaults.standard.set(true, forKey: "feedbackSubmitted")
         UserDefaults.standard.set(universityDic, forKey: "myUniversityDic")
         tableView.reloadData()
         self.tableView.isUserInteractionEnabled = false
     }
     
+        func reloadRatingData() {
+            let ratingVC = self.storyboard!.instantiateViewController(withIdentifier: "RatingTableViewController")
+            self.navigationController?.pushViewController(ratingVC, animated: false)
+
+//            tableView.reloadData()
+        }
+    
+    
     func addListeningObserver() {
         // Define identifier
         let notificationName = Notification.Name("submitCourseFeedback")
+        let reload = Notification.Name("load")
+
         // Register to receive notification
         NotificationCenter.default.addObserver(self, selector: #selector(RatingTableViewController.submitCourseFeedback), name: notificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(RatingTableViewController.reloadRatingData), name: reload, object: nil)
     }
     
     
@@ -177,7 +189,11 @@ class RatingTableViewController: UITableViewController {
     @IBAction func settingsButtonPressed(_ sender: UIBarButtonItem) {
 //        let hasFeedbackBeenSubmitted = false
 //        UserDefaults.standard.set(hasFeedbackBeenSubmitted, forKey: "feedbackSubmitted")
-        _ = self.navigationController?.popViewController(animated: true)
+//        _ = self.navigationController?.popViewController(animated: true)
+        
+        let settingsVC = self.storyboard!.instantiateViewController(withIdentifier: "SettingTableViewController")
+        settingsVC.navigationItem.hidesBackButton = true
+        self.navigationController?.pushViewController(settingsVC, animated: true)
     }
     
 }

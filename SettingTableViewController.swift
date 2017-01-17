@@ -25,6 +25,7 @@ class SettingTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         addListeningObserver()
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,13 +36,9 @@ class SettingTableViewController: UITableViewController {
     override func viewDidDisappear(_ animated: Bool) {
         //remove observer!
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "moduleSelected"), object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "load"), object: nil)
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "load"), object: nil)
 
     }
-    
-    
-    //MARK: Helper Methods
-
     
     
     //MARK: TableSetup
@@ -62,19 +59,16 @@ class SettingTableViewController: UITableViewController {
         //        self.present(ratingVC, animated:true, completion:nil)
     }
     
-    func reloadAllSettingsData() {
-        tableView.reloadData()
-    }
+//    func reloadAllSettingsData() {
+//        tableView.reloadData()
+//    }
     
     func addListeningObserver() {
         // Define identifier
         let moveToRatingsTable = Notification.Name("moduleSelected")
-        let reload = Notification.Name("load")
 
         // Register to receive notification
         NotificationCenter.default.addObserver(self, selector: #selector(SettingTableViewController.moveToRatingTableView), name: moveToRatingsTable, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(SettingTableViewController.reloadAllSettingsData), name: reload, object: nil)
-
     }
     
     

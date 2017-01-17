@@ -43,12 +43,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hlh-Ng-APi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3410" y="850"/>
+            <point key="canvasLocation" x="3463" y="855"/>
         </scene>
         <!--Settings-->
         <scene sceneID="1yr-A6-M4J">
             <objects>
-                <tableViewController id="d13-yv-Jw7" customClass="SettingTableViewController" customModule="UniversityRating" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SettingTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d13-yv-Jw7" customClass="SettingTableViewController" customModule="UniversityRating" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NMq-eo-aZq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +72,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zi6-te-xPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2662" y="850"/>
+            <point key="canvasLocation" x="2716" y="850"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yW5-Hn-GDC">
