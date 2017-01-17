@@ -19,6 +19,8 @@ class RatingTableViewController: UITableViewController {
     //MARK: UI Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.set(false, forKey: "noRating")
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,6 +36,8 @@ class RatingTableViewController: UITableViewController {
         //remove observer!
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "submitCourseFeedback"), object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "load"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "needMoreFeedback"), object: nil)
+        
     }
     
     
@@ -111,12 +115,15 @@ class RatingTableViewController: UITableViewController {
             cell.submitButton.setTitle("FEEDBACK SUBMITTED", for: .normal)
             cell.submitButton.alpha = 0.5
             cell.isUserInteractionEnabled = false
-
-        } else  {
-            cell.submitButton.setTitle("SUBMIT ALL MODULES", for: .normal)
+            
+        } else if UserDefaults.standard.bool(forKey: "noRating")  {
+            cell.submitButton.setTitle("Submit", for: .normal)
             cell.submitButton.alpha = 1
             cell.isUserInteractionEnabled = true
-
+        }  else {
+            cell.submitButton.setTitle("Need More Feedback", for: .normal)
+            cell.submitButton.alpha = 0.5
+            cell.isUserInteractionEnabled = false
         }
         return  cell
         
@@ -132,7 +139,7 @@ class RatingTableViewController: UITableViewController {
             university.timestamp = ""
         }
     }
-
+    
     
     //MARK: Object Persistence
     func saveStateOf(_ university: University) {
@@ -150,6 +157,7 @@ class RatingTableViewController: UITableViewController {
      */
     func submitCourseFeedback() {
         print("Submit")
+        
         for index in universityArray {
             let university = index as! University
             
@@ -166,30 +174,49 @@ class RatingTableViewController: UITableViewController {
         self.tableView.isUserInteractionEnabled = false
     }
     
-        func reloadRatingData() {
-            let ratingVC = self.storyboard!.instantiateViewController(withIdentifier: "RatingTableViewController")
-            self.navigationController?.pushViewController(ratingVC, animated: false)
+    func reloadRatingData() {
+        let ratingVC = self.storyboard!.instantiateViewController(withIdentifier: "RatingTableViewController")
+        self.navigationController?.pushViewController(ratingVC, animated: false)
+        
+        //            tableView.reloadData()
+    }
+    
+    func check()  {
+        for university in universityArray {
+            let uni: University = university as! University
+            print("BOOL(1): \(UserDefaults.standard.bool(forKey: "noRating"))")
+            tableView.reloadData()
 
-//            tableView.reloadData()
+            if uni.checked && uni.rating.isEmpty {
+                UserDefaults.standard.set(false, forKey: "noRating")
+                print("BOOL(2): \(UserDefaults.standard.bool(forKey: "noRating"))")
+            }
+            
         }
+    }
+
     
     
     func addListeningObserver() {
         // Define identifier
         let notificationName = Notification.Name("submitCourseFeedback")
         let reload = Notification.Name("load")
-
+        let needMoreFeedback = Notification.Name("needMoreFeedback")
+        
+        
         // Register to receive notification
         NotificationCenter.default.addObserver(self, selector: #selector(RatingTableViewController.submitCourseFeedback), name: notificationName, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(RatingTableViewController.reloadRatingData), name: reload, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(RatingTableViewController.check), name: needMoreFeedback, object: nil)
+        
     }
     
     
     //MARK: Action Methods
     @IBAction func settingsButtonPressed(_ sender: UIBarButtonItem) {
-//        let hasFeedbackBeenSubmitted = false
-//        UserDefaults.standard.set(hasFeedbackBeenSubmitted, forKey: "feedbackSubmitted")
-//        _ = self.navigationController?.popViewController(animated: true)
+        //        let hasFeedbackBeenSubmitted = false
+        //        UserDefaults.standard.set(hasFeedbackBeenSubmitted, forKey: "feedbackSubmitted")
+        //        _ = self.navigationController?.popViewController(animated: true)
         
         let settingsVC = self.storyboard!.instantiateViewController(withIdentifier: "SettingTableViewController")
         settingsVC.navigationItem.hidesBackButton = true

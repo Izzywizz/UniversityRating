@@ -52,35 +52,35 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8cE-WS-Bfh" userLabel="Emoji Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="450" height="61"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qg-MI-IQl" userLabel="Poor">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qg-MI-IQl" userLabel="Poor">
                                                 <rect key="frame" x="0.0" y="10.5" width="90" height="40"/>
                                                 <state key="normal" image="POOR"/>
                                                 <connections>
                                                     <action selector="emojiSelected:" destination="n31-pn-lY8" eventType="touchUpInside" id="CvL-O4-0t1"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKp-8u-lf5" userLabel="NotGreat">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKp-8u-lf5" userLabel="NotGreat">
                                                 <rect key="frame" x="90" y="10.5" width="90" height="40"/>
                                                 <state key="normal" image="NOT GREAT"/>
                                                 <connections>
                                                     <action selector="emojiSelected:" destination="n31-pn-lY8" eventType="touchUpInside" id="2y2-ue-rN0"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWZ-pw-aOe" userLabel="Satisfactory">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWZ-pw-aOe" userLabel="Satisfactory">
                                                 <rect key="frame" x="180" y="10" width="90" height="41"/>
                                                 <state key="normal" image="SATIS"/>
                                                 <connections>
                                                     <action selector="emojiSelected:" destination="n31-pn-lY8" eventType="touchUpInside" id="wKG-T7-M1X"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLv-TH-BYA" userLabel="Good">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLv-TH-BYA" userLabel="Good">
                                                 <rect key="frame" x="270" y="10" width="90" height="41"/>
                                                 <state key="normal" image="GOOD"/>
                                                 <connections>
                                                     <action selector="emojiSelected:" destination="n31-pn-lY8" eventType="touchUpInside" id="4rk-0U-hpT"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwT-0v-pHH" userLabel="Amazing">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwT-0v-pHH" userLabel="Amazing">
                                                 <rect key="frame" x="360" y="10" width="90" height="41"/>
                                                 <state key="normal" image="AMAZING"/>
                                                 <connections>

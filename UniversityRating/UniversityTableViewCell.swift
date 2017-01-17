@@ -9,7 +9,7 @@
 import UIKit
 
 enum Rating: Int {
-    case poor = 0, notGreat, satisfactory, good, amazing
+    case poor = 1, notGreat, satisfactory, good, amazing
 }
 
 class UniversityTableViewCell: UITableViewCell {
@@ -17,6 +17,7 @@ class UniversityTableViewCell: UITableViewCell {
     //MARK: Stored Properties
     @IBOutlet weak var moduleLabel: UILabel!
     var universitObject = University()
+    let universityArray = UniversityModel.sharedIntstance.universityArray
 
     @IBOutlet weak var completedTickImageView: UIImageView!
     @IBOutlet weak var innerCard: UIView!
@@ -38,6 +39,8 @@ class UniversityTableViewCell: UITableViewCell {
         setupEmoji()
         buttonArray = [poorButton, notGreatButton, satisfactoryButton, goodButton, amazingButton] // Buttons have now loaded in the view
         
+        print("BOOL: \(checkRatingsEmpty())")
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -55,7 +58,7 @@ class UniversityTableViewCell: UITableViewCell {
         
         //Ensure that the ratings from the preivous selection is maintained, if it returns an optional then the state doesn't need to be selected !
         if let buttonRating = Int(universitObject.rating)   {
-            let button = buttonArray[buttonRating]
+            let button = buttonArray[buttonRating - 1] //you have to reduce the value by - 1 becuase arrays zerobased index
             button.isSelected = true
         }
     }
@@ -64,7 +67,7 @@ class UniversityTableViewCell: UITableViewCell {
     @IBAction func emojiSelected(_ sender: UIButton) {
         
         let ratingScore = Rating(rawValue: sender.tag)!
-        
+
         switch ratingScore {
         case .poor:
             print("POOR")
@@ -73,25 +76,31 @@ class UniversityTableViewCell: UITableViewCell {
         case .notGreat:
             print("NotGreat")
             offSelectedButtonState()
+
             sender.isSelected = !sender.isSelected;
         case .satisfactory:
             print("Satisfactory")
+
             offSelectedButtonState()
             sender.isSelected = !sender.isSelected;
         case .good:
             print("Good")
+
             offSelectedButtonState()
             sender.isSelected = !sender.isSelected;
         case .amazing:
             print("Amazing")
+
             offSelectedButtonState()
             sender.isSelected = !sender.isSelected;
         }
         
-        //        print(sender.tag)
+//       print(sender.tag)
 //        let currentTimeStamp = NSDate()
 //        universitObject.timestamp = "\(currentTimeStamp)"
         universitObject.rating = String(sender.tag)
+        UserDefaults.standard.set(true, forKey: "noRating")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "needMoreFeedback"), object: nil)
     }
     
     //MARK: Emoji Image Setup
@@ -120,7 +129,17 @@ class UniversityTableViewCell: UITableViewCell {
         }
     }
     
-
+    //MARK: Helper Functions
+    func checkRatingsEmpty() -> Bool {
+        for university in universityArray {
+            let uni: University = university as! University
+            if uni.checked && uni.rating.isEmpty {
+                return true
+            }
+        }
+        return false
+    }
+    
 }
 
 
