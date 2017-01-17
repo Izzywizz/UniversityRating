@@ -19,8 +19,6 @@ class RatingTableViewController: UITableViewController {
     //MARK: UI Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserDefaults.standard.set(false, forKey: "noRating")
-        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,6 +28,8 @@ class RatingTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         addListeningObserver()
+        check()
+        tableView.reloadData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {

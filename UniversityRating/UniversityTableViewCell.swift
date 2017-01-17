@@ -80,7 +80,6 @@ class UniversityTableViewCell: UITableViewCell {
             sender.isSelected = !sender.isSelected;
         case .satisfactory:
             print("Satisfactory")
-
             offSelectedButtonState()
             sender.isSelected = !sender.isSelected;
         case .good:
