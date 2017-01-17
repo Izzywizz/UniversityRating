@@ -24,7 +24,7 @@ class UniversityFooterTableViewCell: UITableViewCell {
             submitButton.alpha = 0.5
             isUserInteractionEnabled = false
             
-        } else if feedbackReceived == false {
+        } else {
             submitButton.setTitle("SUBMIT ALL MODULES", for: .normal)
             submitButton.alpha = 1
             isUserInteractionEnabled = true
@@ -39,27 +39,11 @@ class UniversityFooterTableViewCell: UITableViewCell {
     
     @IBAction func submitAllModulesPressed(_ sender: UIButton) {
         
-        if checkRatingsEmpty() {
-            submitButton.setTitle("Need More Feedback", for: .normal)
-            submitButton.alpha = 1
-            submitButton.isUserInteractionEnabled = true
-        } else {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "submitCourseFeedback"), object: nil)
             submitButton.setTitle("FEEDBACK SUBMITTED!", for: .normal)
             submitButton.alpha = 0.5
             submitButton.isUserInteractionEnabled = false
-        }
-    }
-    
-    
-    func checkRatingsEmpty() -> Bool {
-        for university in universityArray {
-            let uni: University = university as! University
-            if uni.checked && uni.rating.isEmpty {
-                return true
-            }
-        }
-        return false
+
     }
     
 }
