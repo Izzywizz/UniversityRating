@@ -86,7 +86,7 @@ struct Time {
         let day = Day(rawValue: weekday)!
         
         switch (day) {
-        case .tuesday where numberOfDaysPassedBetween(lastSyncedTime(), AndEndDate: startOfToday()) >=  0:
+        case .monday where numberOfDaysPassedBetween(lastSyncedTime(), AndEndDate: startOfToday()) > 0:
             print("Monday Found/ Feedback given must be greater then one day")
             let hasFeedbackBeenRecieved = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
             print("FeedbackSubmitted: \(hasFeedbackBeenRecieved)")
@@ -102,6 +102,10 @@ struct Time {
         }
         return weekday
     }
+    
+    /**
+     
+     */
     
     enum Day: Int {
         case sunday = 1, monday, tuesday, wednesday, thrusday, friday, saturday

@@ -28,7 +28,7 @@ class RatingTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         addListeningObserver()
-        check()
+        checkRatingsGiven()
         tableView.reloadData()
     }
     
@@ -71,7 +71,6 @@ class RatingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 70
     }
-    
     
     //MARK: Height Cell
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -140,13 +139,12 @@ class RatingTableViewController: UITableViewController {
         }
     }
     
-    
     //MARK: Object Persistence
     func saveStateOf(_ university: University) {
         universityDic.append(["module": "\(university.module)", "question": "\(university.question)", "rating": "\(university.rating)", "checked": "\(university.checked)", "submitted": "\(university.timestamp)"])
         
         //Added flurry saving/pushing, it logs the module as the parameter name so it groups all the results
-        let flurryDic = ["module": "\(university.module)", "rating": "\(university.rating)", "submitted": "\(university.timestamp)"]
+        let flurryDic = ["rating": "\(university.rating)"]
         Flurry.logEvent("\(university.module)", withParameters: flurryDic)
     }
     
@@ -181,7 +179,12 @@ class RatingTableViewController: UITableViewController {
         //            tableView.reloadData()
     }
     
-    func check()  {
+    /**
+     This method ensures that the feedback must be given in order for the submit button to activate, this is being called in two places: 
+     1. From the observer itself which is being fired every time the user makes a selection
+     2. when the user actually
+     */
+    func checkRatingsGiven()  {
         for university in universityArray {
             let uni: University = university as! University
             print("BOOL(1): \(UserDefaults.standard.bool(forKey: "noRating"))")
@@ -207,7 +210,7 @@ class RatingTableViewController: UITableViewController {
         // Register to receive notification
         NotificationCenter.default.addObserver(self, selector: #selector(RatingTableViewController.submitCourseFeedback), name: notificationName, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(RatingTableViewController.reloadRatingData), name: reload, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(RatingTableViewController.check), name: needMoreFeedback, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(RatingTableViewController.checkRatingsGiven), name: needMoreFeedback, object: nil)
         
     }
     
