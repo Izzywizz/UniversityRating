@@ -104,7 +104,7 @@ struct Time {
     }
     
     /**
-     
+     Enum for the dats of the week
      */
     
     enum Day: Int {
