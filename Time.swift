@@ -86,15 +86,15 @@ struct Time {
         let day = Day(rawValue: weekday)!
         
         switch (day) {
-        case .monday where numberOfDaysPassedBetween(lastSyncedTime(), AndEndDate: startOfToday()) > 0:
+        case .wednesday where numberOfDaysPassedBetween(lastSyncedTime(), AndEndDate: startOfToday()) >= 0:
             print("Monday Found/ Feedback given must be greater then one day")
-            let hasFeedbackBeenRecieved = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
-            print("FeedbackSubmitted: \(hasFeedbackBeenRecieved)")
+//            let hasFeedbackBeenRecieved = UserDefaults.standard.bool(forKey: "feedbackSubmitted")
+//            print("FeedbackSubmitted: \(hasFeedbackBeenRecieved)")
             
-            if hasFeedbackBeenRecieved {
-                print("In here!")
+//            if hasFeedbackBeenRecieved {
+//                print("In here!")
                 UniversityModel.sharedIntstance.reset()
-            }
+//            }
             
         default:
             //            print("Not a Weekday we care about: No Reset necessary")
