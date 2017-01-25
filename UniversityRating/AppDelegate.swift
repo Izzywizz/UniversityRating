@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UniversityModel.sharedIntstance.savedUniversityDic()
         {
             let _ = time.getDayOfWeek()
+            moveToRatingScreen()
+            
             print("Items need to be created, savedUniversityDic() called")
         } else  {
             UniversityModel.sharedIntstance.createUniversityArray() // this creates all the objects again
@@ -68,6 +70,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if hasFeedbackBeenRecieved {
             let _ = time.getDayOfWeek()
         }
+    }
+    
+    func moveToRatingScreen() {
+        // mainStoryboard
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        // rootViewController
+        let rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "RatingTableViewController") as UIViewController
+        
+        // navigationController
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        navigationController.isNavigationBarHidden = false // or not, your choice.
+        
+        // self.window
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window!.rootViewController = navigationController
+        self.window!.makeKeyAndVisible()
+
     }
     
     
