@@ -32,7 +32,7 @@ struct Time {
      that the number of days given for feedback exceeds a certain amount in order to facilate the reset mechanic
      for the feedback every Monday.
      - returns: Int (number of days)
-     */
+     **/
     func numberOfDaysPassedBetween(_ startDate: Date, AndEndDate endDate: Date) -> Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([Calendar.Component.day], from: startDate, to: endDate)
@@ -104,7 +104,7 @@ struct Time {
     }
     
     /**
-     Enum for the dats of the week
+     Enum for the dates of the week
      */
     
     enum Day: Int {
