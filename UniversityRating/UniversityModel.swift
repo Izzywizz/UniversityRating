@@ -25,7 +25,6 @@ final class UniversityModel {
             let uni: University = University().createUniversityFromDict(index)
             universityArray.add(uni)
         }
-        
     }
     
     func createSavedUniversityArray(_ savedArray: [[String: Any]]) {
