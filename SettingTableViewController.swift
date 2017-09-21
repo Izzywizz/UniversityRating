@@ -51,7 +51,7 @@ class SettingTableViewController: UITableViewController {
     
     
     //MARK: Observer Methods
-    func moveToRatingTableView() {
+    @objc func moveToRatingTableView() {
         print("Moving to Rating Table view")
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let ratingVC = storyboard.instantiateViewController(withIdentifier: "RatingTableViewController") as! RatingTableViewController
